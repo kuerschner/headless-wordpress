@@ -1,0 +1,23 @@
+.fullScreen {
+    width: 100vw;
+    height: auto;
+    z-index: 1;
+}
+
+.carouselText {
+    margin-top: -4rem;
+}
+
+.carouselText h1,
+.carouselText p {
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
+}
+
+.carouselSubheading {
+    font-size: 1.5rem;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 50px;
+    height: 50px;
+}

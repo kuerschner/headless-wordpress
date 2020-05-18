@@ -1,0 +1,36 @@
+.root {
+    height: 100vh;
+    text-align: center;
+    background-size: cover;
+}
+
+.logoImg {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.heroTextContainer {
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
+}
+
+.heroTextContainer h1 {
+    text-transform: uppercase;
+}
+
+.heroText {
+    color: #fff;
+}
+.subText {
+    color: #fff;
+}
+
+.boldSubText {
+    font-weight: 700;
+    color: #fff;
+}
+.divider {
+    width: 40%;
+    height: 0.2rem;
+    background-color: #fff;
+    border-radius: 50px;
+}

@@ -1,0 +1,43 @@
+.navbar {
+    background-color: #001743;
+    color: #fff;
+    padding: 1rem 2rem;
+    width: 100%;
+    z-index: 99;
+}
+
+.navToggle {
+    color: #fff;
+}
+
+.navItem {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.navItem:hover {
+    text-decoration: none;
+}
+
+.logoImg {
+    max-width: 200px;
+}
+
+.logoImgLink {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-item {
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .nav-item > a {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .navbar-nav {
+        padding: 30px 0;
+    }
+}

@@ -1,0 +1,40 @@
+.footerContainer {
+  background-color: #001743;
+  color: #fff;
+  padding: 1.5rem 3rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.desktopFooter {
+  display: none;
+}
+
+.mobileFooter {
+  text-align: center;
+}
+
+.footerLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.accentedU {
+  display: inline-block;
+  padding-top: 0;
+  font-size: 1.2rem;
+  font-family: 'Lato';
+}
+  
+
+  @media screen and (min-width: 900px) {
+  .desktopFooter {
+    display: flex;
+  }
+
+  .mobileFooter {
+    display: none;
+  }
+}
+  
