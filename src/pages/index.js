@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Layout from "../components/Layout";
 import axios from "axios";
-import Link from "next/link";
 import Hero from "../components/Hero";
 import CenterText from "../components/CenterText";
 import LeftText from "../components/LeftText";
@@ -10,10 +9,33 @@ import IconHeading from "../components/IconHeading";
 import Button from "../components/Button";
 import View from "../components/View";
 
-const Home = ({ data, title, meta }) => {
+const Home = () => {
+	const [data, setData] = useState(null)
+	const [title, setTitle] = useState(null)
+	const [meta, setMeta] = useState(null)
+
+	async function makeGetRequest() {
+
+	await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/9')
+		.then(res => {
+				const responseData = res.data.acf;
+				const responseTitle = res.data.title;
+				const responseMeta = res.data.meta;
+				setData(responseData);
+				setTitle(responseTitle);
+				setMeta(responseMeta);
+		})
+	}
+
+	useEffect(() => {
+		makeGetRequest()
+	}, [])
+
 
 	return (
-		<Layout title={title.rendered} meta={meta}>
+		<Layout title={title && title.rendered} meta={meta}>
+			{data && 
+			<>
 			<View>
 				<Hero image={data.hero_image} heading={data.hero_heading} content={data.hero_text} cta={data.hero_cta_text} ctaLink={data.hero_cta_link} />
 			</View>
@@ -23,15 +45,15 @@ const Home = ({ data, title, meta }) => {
 						<div className="col-12 mt-4">
 							<CenterText heading={data.section_two_heading} />
 						</div>
-						{data.section_two_items.map((value, key) => 
+						{data.section_two_items.map((value, key) =>
 							<div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
-								<IconText heading={value.icon_heading} content={value.icon_text} iconUrl={value.icon.url} iconAlt={value.icon.alt}/>
+								<IconText heading={value.icon_heading} content={value.icon_text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
 							</div>
 						)}
 						<div className="col-12 text-center">
-							<Link href={data.section_two_cta_link}>
+							<a href={data.section_two_cta_link}>
 								<Button>{data.section_two_cta_text}</Button>
-							</Link>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -75,13 +97,10 @@ const Home = ({ data, title, meta }) => {
 					</div>
 				</div>
 			</View>
+			</>
+}
 		</Layout>
 	)
-}
-
-Home.getInitialProps = async ({ req }) => {
-	const res = await axios.get(`http://cms.trumanrx.com/wp-json/wp/v2/pages/9`)
-	return { data: res.data.acf, title: res.data.title, meta: res.data.meta }
 }
 
 export default Home

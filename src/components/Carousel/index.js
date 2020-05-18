@@ -5,9 +5,8 @@ import {
     CarouselControl,
     CarouselIndicators,
 } from "reactstrap";
-import Link from "next/link";
 import Button from "../Button";
-import "./Carousel.module.css";
+import "./styles.css";
 
 
 export default ({ type, slides }) => {
@@ -42,7 +41,7 @@ export default ({ type, slides }) => {
                     <div className="col-9 text-white carouselText text-center">
                         {slide.carousel_headline && <h1 className="text-white">{slide.carousel_headline}</h1>}
                         {slide.carousel_body && <p className="carouselSubheading mb-5">{slide.carousel_body}</p>}
-                        {slide.carousel_cta_text && <Link href={slide.carousel_cta_link}><Button>{slide.carousel_cta_text}</Button></Link>}
+                        {slide.carousel_cta_text && <a href={slide.carousel_cta_link}><Button>{slide.carousel_cta_text}</Button></a>}
                     </div>
                 </div>
             </div>

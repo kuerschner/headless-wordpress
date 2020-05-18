@@ -1,5 +1,5 @@
 import React from "react";
-import "./ImageText.module.css";
+import "./styles.css";
 
 export default ({ type, heading, subHeading, content, src, alt }) => {
     return (

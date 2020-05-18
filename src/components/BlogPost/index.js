@@ -1,5 +1,5 @@
 import React from "react";
-import "./BlogPost.module.css";
+import "./styles.css";
 
 export default ({ heading, content, topic, img }) => {
     return (

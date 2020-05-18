@@ -1,18 +1,40 @@
-import React from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../components/Layout";
 import View from "../components/View";
 import CenterText from "../components/CenterText";
 import IconText from "../components/IconText";
-import IconHeading from "../components/IconHeading";
 import Button from "../components/Button";
 import Carousel from "../components/Carousel";
 
-const TRT = ({ data, title, meta }) => {
+const TRT = () => {
+
+    const [data, setData] = useState(null)
+    const [title, setTitle] = useState(null)
+    const [meta, setMeta] = useState(null)
+
+    async function makeGetRequest() {
+
+        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/12')
+
+        .then(res => {
+                const responseData = res.data.acf;
+                const responseTitle = res.data.title;
+                const responseMeta = res.data.meta;
+                setData(responseData);
+                setTitle(responseTitle);
+                setMeta(responseMeta);
+        })
+    }
+
+    useEffect(() => {
+        makeGetRequest()
+    }, [])
 
     return (
-        <Layout title={title.rendered} meta={meta}>
+        <Layout title={title && title.rendered} meta={meta}>
+            {data && 
+            <>
             <View>
                 <Carousel type="fullScreen" slides={data.section_one_carousel} />
             </View>
@@ -20,7 +42,7 @@ const TRT = ({ data, title, meta }) => {
                 <div className="container py-5">
                     <div className="row d-flex justify-content-around">
                         {data.section_two_fields.map(section => (
-                            <div className="col-12 col-md-5 mt-4">
+                            <div className="col-12 col-md-5 mt-4" key={section.image.url}>
                                 <div className="text-center">
                                     <img src={section.image.url} alt={section.image.alt} style={{ maxHeight: "300px" }} />
                                 </div>
@@ -43,7 +65,7 @@ const TRT = ({ data, title, meta }) => {
                                 </div>
                                 {data.section_three_icons.map((value, key) =>
                                     <div className="col-12 col-md-6 col-lg-3 text-center mt-4" key={key}>
-                                        <IconText heading={value.icon_heading} iconUrl={value.icon.url} iconAlt={value.icon.alt}/>
+                                        <IconText heading={value.icon_heading} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
                                     </div>
                                 )}
                             </div>
@@ -76,18 +98,16 @@ const TRT = ({ data, title, meta }) => {
                             <CenterText heading={data.section_five_heading} />
                         </div>
                         <div className="col-12 text-center">
-                            <Link href={data.section_five_cta_link}><Button>{data.section_five_cta_text}</Button></Link>
+                            <a href={data.section_five_cta_link}><Button>{data.section_five_cta_text}</Button></a>
                         </div>
                     </div>
                 </div>
             </View>
+            </>
+}
         </Layout >
     )
 }
 
-TRT.getInitialProps = async ({ req }) => {
-    const res = await axios.get(`http://cms.trumanrx.com/wp-json/wp/v2/pages/12`)
-    return { data: res.data.acf, title: res.data.title, meta: res.data.meta }
-}
 export default TRT;
 

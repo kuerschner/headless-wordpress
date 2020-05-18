@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../components/Layout";
 import BannerHero from "../components/BannerHero";
@@ -11,8 +11,28 @@ import image2 from "../images/bgMain.jpg";
 // 2. Add Blog Filtering?
 // 3. Clean up imports
 
-const Blog = ({ data, title, meta }) => {
-    console.log('data: ', data);
+const Blog = () => {
+    const [data, setData] = useState(null)
+    const [title, setTitle] = useState(null)
+    const [meta, setMeta] = useState(null)
+
+    async function makeGetRequest() {
+
+        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/112')
+        .then(res => {
+                const responseData = res.data.acf;
+                const responseTitle = res.data.title;
+                const responseMeta = res.data.meta;
+                setData(responseData);
+                setTitle(responseTitle);
+                setMeta(responseMeta);
+        })
+    }
+
+    useEffect(() => {
+        makeGetRequest()
+    }, [])
+
     const blogPosts = [
         {
             title: "blogPost 1",
@@ -71,7 +91,9 @@ const Blog = ({ data, title, meta }) => {
 
     ]
     return (
-        <Layout title={title.rendered} meta={meta}>
+        <Layout title={title && title.rendered} meta={meta}>
+            {data && 
+            <>
             <BannerHero heading={data.blog_hero} />
             <div className="container">
                 <div className="row">
@@ -84,17 +106,15 @@ const Blog = ({ data, title, meta }) => {
                 <div className="row p-4">
                     {
                         blogPosts.map(post => (
-                            <BlogPost heading={post.title} content={post.snippet} topic={post.topic} img={post.img} />
+                            <BlogPost heading={post.title} content={post.snippet} topic={post.topic} img={post.img} key={post.title}/>
                         ))
                     }
                 </div>
             </div>
+            </>
+            }
         </Layout>
     )
 }
 
-Blog.getInitialProps = async ({ req }) => {
-    const res = await axios.get(`http://cms.trumanrx.com/wp-json/wp/v2/pages/112`)
-    return { data: res.data.acf, title: res.data.title, meta: res.data.meta }
-}
 export default Blog;

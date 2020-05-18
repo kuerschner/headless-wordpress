@@ -10,8 +10,7 @@ import {
 } from "reactstrap";
 import { FaTimes, FaBars } from "react-icons/fa";
 
-import Link from "next/link";
-import "./NavBar.module.css";
+import "./styles.css";
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,30 +20,30 @@ const NavBar = (props) => {
   return (
     <div>
       <Navbar className="navbar" expand="md">
-        <Link href="/"><a className="logoImgLink"><img className="logoImg" src={require("../../images/logo.svg")} alt="Truman RX Logo" /></a></Link>
+        <a href="/" className="logoImgLink"><img className="logoImg" src={require("../../images/logo.svg")} alt="Truman RX Logo" /></a>
         <NavbarToggler onClick={toggle}>{isOpen ? <FaTimes color="#fff" /> : <FaBars color="#fff" />} </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Link href="/why-trt"><a className="navItem">Why TRT?</a></Link>
+              <a href="/why-trt" className="navItem">Why TRT?</a>
             </NavItem>
             <NavItem>
-              <Link href="/get-checked"><a className="navItem">Get Checked</a></Link>
+              <a href="/get-checked" className="navItem">Get Checked</a>
             </NavItem>
             <NavItem>
-              <Link href="/price"><a className="navItem">Price</a></Link>
+              <a href="/price" className="navItem">Price</a>
             </NavItem>
             <NavItem>
-              <Link href="/blog"><a className="navItem">Blog</a></Link>
+              <a href="/blog" className="navItem">Blog</a>
             </NavItem>
             <NavItem>
-              <Link href="/about"><a className="navItem">About Us</a></Link>
+              <a href="/about" className="navItem">About Us</a>
             </NavItem>
             <NavItem>
-              <Link href="/contact"><a className="navItem">Contact</a></Link>
+              <a href="/contact" className="navItem">Contact</a>
             </NavItem>
             <NavItem>
-              <Link href="#"><a className="navItem">Members</a></Link>
+              <a href="#" className="navItem">Members</a>
             </NavItem>
           </Nav>
         </Collapse>

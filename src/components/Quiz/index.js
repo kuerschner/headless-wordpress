@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import CheckBox from "../../images/check-solid.svg";
 import Arrow from "../../images/arrow-right-solid.svg";
 
@@ -60,14 +60,14 @@ const Quiz = () => {
 
     const responseArr = [`Based on your answers, you may benefit from testosterone replacement therapy through Trūman.`, `Testosterone replacement therapy might not be the type of treatment you need. If you"re interested in learning more about men"s health, study up with our blog.`];
 
-    const clickHandler = (questionKey, selection) => {
+    const clickHandler = useCallback((questionKey, selection) => {
         setVisited(!visited);
         const answers = [...selections];
         const objectToReplace = answers[questionKey];
         const replacementObject = { ...objectToReplace, answer: selection };
         answers.splice(questionKey, 1, replacementObject);
         setSelections([...answers]);
-    }
+    })
 
     const checkStyle = {
         width: "20px",
@@ -90,14 +90,14 @@ const Quiz = () => {
     useEffect(() => {
         const checkSelections = selections.some(i => i.answer === null);
         setComplete(!checkSelections);
-    }, [clickHandler]);
+    }, [clickHandler, selections]);
 
     useEffect(() => {
         if (completeQuiz) {
             if (selections.some(i => i.answer === true)) setAnswer(true);
             else setAnswer(false);
         }
-    }, [completeQuiz]);
+    }, [completeQuiz, selections]);
 
     const questions = selections.map((val, key) => {
         return (

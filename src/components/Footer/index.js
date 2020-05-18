@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import "./Footer.module.css";
+import "./styles.css";
 
 const Footer = props => {
     return (
@@ -26,7 +25,7 @@ const Footer = props => {
                     <div className="col-12" >
                         <div className="d-flex flex-column justify-content-center align-items-center">
                             <a className="footerLink" href="mailto:info@trumanrx.com">info@trumanrx.com</a>
-                            <Link href="/PrivacyPolicy" as="/privacy-policy"><a className="footerLink" href="/privacy-policy">Privacy Policy</a></Link>
+                           <a className="footerLink" href="/privacy-policy">Privacy Policy</a>
                         </div>
                     </div>
                 </div>
