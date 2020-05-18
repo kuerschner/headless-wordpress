@@ -19,7 +19,7 @@ const NavBar = (props) => {
 
   return (
     <div>
-      <Navbar className="navbar" expand="md">
+      <Navbar expand="md">
         <a href="/" className="logoImgLink"><img className="logoImg" src={require("../../images/logo.svg")} alt="Truman RX Logo" /></a>
         <NavbarToggler onClick={toggle}>{isOpen ? <FaTimes color="#fff" /> : <FaBars color="#fff" />} </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
