@@ -25,7 +25,7 @@ const NavBar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <a href="/why-trt" className="navItem">Why TRT?</a>
+              <a href="/testosterone-replacement-therapy" className="navItem">Why TRT?</a>
             </NavItem>
             <NavItem>
               <a href="/get-checked" className="navItem">Get Checked</a>
