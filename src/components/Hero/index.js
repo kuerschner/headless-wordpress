@@ -33,7 +33,7 @@ const Hero = ({ image, heading, subheading, content, cta, ctaLink, ctaTwo, ctaTw
                                         <a href={ctaLink}><Button>{cta}</Button></a>
                                     </div>}
                                     {ctaTwo && <div className="py-4 px-2 mt-4">
-                                        <a href={ctaTwoLink}><Button>{cta}</Button></a>
+                                        <a href={ctaTwoLink}><Button type='button-secondary'>{cta}</Button></a>
                                     </div>}
                                 </div>
                             </>

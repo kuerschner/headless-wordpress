@@ -1,6 +1,50 @@
 .button-main {
-    background-color: #001743;
+    background-color: #0799d6;
     color: #fff;
-    padding: 1rem 1.5rem;
-    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 40px;
+    border: 1px solid transparent;
+}
+
+.button-main:disabled,
+.button-main:hover:disabled {
+    background-color: #c7c7c7;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 40px;
+    border: none;
+}
+
+.button-main:hover {
+    color: #fff;
+    background-color: #215fac;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 40px;
+    border: 1px solid #215fac;
+}
+
+.button-secondary {
+    color: #0799d6;
+    background-color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 40px;
+    border: 1px solid #0799d6;
+}
+
+.button-secondary:hover {
+    background-color: #215fac;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 40px;
+    border: 1px solid #215fac;
 }

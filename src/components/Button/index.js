@@ -1,8 +1,8 @@
 import React from "react"
 import "./styles.css";
 
-export default ({ children }) => {
+export default ({ children, type='button-main', disabled }) => {
     return (
-        <button className="button button-main mt-4">{children}</button>
+        <button className={`button ${type} mt-4`} disabled={disabled}>{children}</button>
     )
 }

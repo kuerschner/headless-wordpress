@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #001743;
+    background-color: #020202;
     color: #fff;
     width: 100%;
     z-index: 99;
@@ -14,10 +14,18 @@
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 600;
+    text-transform: uppercase;
 }
+
+   
+
 
 .navItem:hover {
     text-decoration: none;
+}
+
+.navItem a:hover {
+    color: #fff;
 }
 
 .logoImg {
@@ -25,8 +33,29 @@
     height: auto;
 }
 
-.logoImgLink {
-    width: 50%;
+.logoImgLink > img {
+    width: 100%;
+    margin-left: 1rem;
+}
+
+.selectionLine {
+    background-color: #0799d6;
+    height: 1px;
+    width: 25px;
+    margin: 0.25rem 1rem 0;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.navItem:hover + .selectionLine,
+.selectionLine.active {
+    opacity: 1;
+}
+
+.horizontalBar {
+    height: 25px;
+    width: 1px;
+    background-color: #0799d6;
 }
 
 @media screen and (max-width: 768px) {
@@ -40,6 +69,17 @@
     }
     .navbar-nav {
         padding: 30px 0;
+    }
+
+    .selectionLine {
+        background-color: #0799d6;
+        height: 1px;
+        width: 50%;
+        margin: 0.25rem auto 0;
+    }
+
+    .horizontalBar {
+        display: none;
     }
 }
 
