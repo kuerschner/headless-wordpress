@@ -5,8 +5,11 @@ import Button from "../components/Button";
 
 
 const Members = () => {
+    const [data, setData] = useState(null)
     const [title, setTitle] = useState(null)
     const [meta, setMeta] = useState(null)
+    const [agreeTerms1, setAgreeTerms1] = useState(null)
+    const [agreeTerms2, setAgreeTerms2] = useState(null)
 
     async function makeGetRequest() {
 
@@ -14,8 +17,10 @@ const Members = () => {
 
         .then(res => {
 
-                const responseTitle = res.data.title;
-                const responseMeta = res.data.meta;
+            const responseData = res.data.acf;
+            const responseTitle = res.data.title;
+            const responseMeta = res.data.meta;
+            setData(responseData);
                 setTitle(responseTitle);
                 setMeta(responseMeta);
         })
@@ -27,13 +32,21 @@ const Members = () => {
     }, [])
 
     const [disabled, setDisabled] = useState(true)
+    const [showMessage, setShowMessage] = useState(false)
 
     const onChange = e => {
-        e.target.value === 'colorado' ? setDisabled(false) : setDisabled(true)
+       if( e.target.value === 'colorado' ) {
+            setDisabled(false)
+            setShowMessage(false)
+        } else {
+            setDisabled(true)
+            setShowMessage(true)
+        }
     }
 
     return (
         <Layout title={title && title.rendered} meta={meta} >
+            {data && 
             <div className="container my-md-5 py-md-5">
                 <div className="row my-md-4 py-md-5">
                     <div className="col-12 my-5 mx-auto p-5 text-center">
@@ -93,11 +106,32 @@ const Members = () => {
                                 <option value="wisconsin">Wisconsin</option>
                                 <option value="wyoming">Wyoming</option>
                             </select>
+                        
+                            <div className='d-flex flex-column'>
+                                <div className='terms1'>
+                                    <input type="checkbox" id="terms1" name="terms1" value="terms1" onChange={() => setAgreeTerms1(!agreeTerms1)}/>
+                                    {' '}
+                                    <label for="terms1">{data.terms_1} <a href={data.terms_1_link}>{data.terms_1_link_text}</a></label>
+                                </div>
+                                <div className='terms2'>
+                                    <input type="checkbox" id="terms2" name="terms2" value="terms2" onChange={() => setAgreeTerms2(!agreeTerms2)}/>
+                                    {' '}
+                                    <label for="terms2">{data.terms_2} <a href={data.terms_2_link}>{data.terms_2_link_text}</a></label>
+                                </div>
+                            </div>
+                            <div>
+                                { showMessage ?
+                                <p>{data.unavailable_message}</p> 
+                                : null 
+                                }
+                                
+                                <Button disabled={disabled || !agreeTerms1 || !agreeTerms2}>Continue</Button>
+                            </div>
                         </div>
-                        <div><Button disabled={disabled}>Continue</Button></div>
                     </div>
                 </div>
             </div>
+        }
         </Layout>
     )
 }
