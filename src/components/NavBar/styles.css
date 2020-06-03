@@ -17,9 +17,6 @@
     text-transform: uppercase;
 }
 
-   
-
-
 .navItem:hover {
     text-decoration: none;
 }
@@ -80,6 +77,28 @@
 
     .horizontalBar {
         display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 950px) {
+    .nav-item {
+        padding: 10px 10px;
+        text-align: center;
+    }
+    .nav-item > a {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .navItem {
+        margin: 0;
+    }
+
+    .horizontalBar {
+        padding-top: 1rem;
+        height: 25px;
+        width: 1px;
+        background-color: #0799d6;
     }
 }
 
