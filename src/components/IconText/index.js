@@ -9,7 +9,7 @@ export default ({ iconUrl, iconAlt, heading, content }) => (
                 </div>
             </div>
         </div>
-        <div className="col-12 text-center">
+        <div className="col-12 text-center column-text">
             {heading && <h3>{heading}</h3>}
             {content && <p>{content}</p>}
         </div>

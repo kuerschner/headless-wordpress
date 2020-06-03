@@ -94,14 +94,14 @@ const About = () => {
                         )}
                     </div>
                 </div>
-                <div className="container-fluid my-5">
+                <div className="container-fluid mt-5">
                     <div className="row" style={{ backgroundImage: `url(${data.section_four_image.url})`, backgroundSize: "cover", height: "400px", backgroundPosition: "center" }}></div>
                 </div>
             </View>
             <View>
-                <div className="container py-5">
+                <div className="container-fluid py-5 sub-footer">
                     <div className="row d-flex justify-content-center">
-                        <div className="col-12 col-lg-8">
+                        <div className="col-12 col-md-12 col-lg-10 col-xl-10 text-center">
                             <CenterText heading={data.section_five_heading} />
                         </div>
                     </div>

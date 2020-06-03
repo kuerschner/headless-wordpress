@@ -70,7 +70,7 @@ const Quiz = () => {
     })
 
     const checkStyle = {
-        width: "20px",
+        width: "16px",
         height: "auto",
         marginRight: "10px",
         position: "absolute",
@@ -101,29 +101,27 @@ const Quiz = () => {
 
     const questions = selections.map((val, key) => {
         return (
-            <div className="quiz-wrapper row d-flex justify-content-center mb-4 py-4" key={key}>
+            <div className="quiz-wrapper row d-flex justify-content-center py-4" key={key}>
                 <div className="col-12 col-lg-10">
-                    <div className="card p-4 p-lg-5">
-                        <div className="question text-center px-xl-5">
-                            <h2>{val.question}</h2>
+                    <div className="question text-center px-xl-5">
+                        <h2>{val.question}</h2>
+                    </div>
+                    <div className="answer row d-flex justify-content-center">
+                        <div className="col-12 col-sm-7 col-md-5 col-lg-3 col-xl-3 px-xl-4 mt-3">
+                            <button
+                                onClick={() => clickHandler(key, true)}
+                                className={`btn btn-md btn-block truman-btn ${val.answer !== null ? val.answer ? "selected" : null : ""}`}
+                            >
+                                <img src={CheckBox} style={checkStyle} className={`${val.answer !== null ? val.answer ? "img-selected" : null : ""}`} />Yes
+                            </button>
                         </div>
-                        <div className="answer row d-flex justify-content-center">
-                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-xl-4 mt-5">
-                                <button
-                                    onClick={() => clickHandler(key, true)}
-                                    className={`btn btn-lg btn-block truman-btn ${val.answer !== null ? val.answer ? "selected" : null : ""}`}
-                                >
-                                    <img src={CheckBox} style={checkStyle} className={`${val.answer !== null ? val.answer ? "img-selected" : null : ""}`} />Yes
-                                </button>
-                            </div>
-                            <div className="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4 px-xl-4 mt-5">
-                                <button
-                                    onClick={() => clickHandler(key, false)}
-                                    className={`btn btn-lg btn-block truman-btn ${val.answer !== null ? !val.answer ? "selected" : null : ""}`}
-                                >
-                                    <img src={CheckBox} style={checkStyle} className={`${val.answer !== null ? !val.answer ? "img-selected" : null : ""}`} />No
-                                </button>
-                            </div>
+                        <div className="col-12 col-sm-7 col-md-5 col-lg-3 col-xl-3 px-xl-4 mt-3">
+                            <button
+                                onClick={() => clickHandler(key, false)}
+                                className={`btn btn-md btn-block truman-btn ${val.answer !== null ? !val.answer ? "selected" : null : ""}`}
+                            >
+                                <img src={CheckBox} style={checkStyle} className={`${val.answer !== null ? !val.answer ? "img-selected" : null : ""}`} />No
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -132,7 +130,7 @@ const Quiz = () => {
     });
 
     return (
-        <div className="container pt-5 truman-quiz">
+        <div className="container py-5 truman-quiz">
             <div className="row d-flex justify-content-center">
                 <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
                     <h1>{!completeQuiz ? `See If You Qualify!` : answer ? responseArr[0] : responseArr[1]}</h1>
@@ -144,16 +142,16 @@ const Quiz = () => {
                     {
                         !completeQuiz
                             ?
-                            <button onClick={() => setCompleteQuiz(true)} className={`btn btn-lg truman-btn ${!complete ? "disabled" : ""}`}>Complete</button>
+                            <button onClick={() => setCompleteQuiz(true)} className={`btn btn-md truman-btn ${!complete ? "disabled" : ""}`}>Complete</button>
                             :
                             <div className="btn-group" role="group">
-                                <button onClick={() => setCompleteQuiz(false)} className={`btn btn-lg truman-btn ${!complete ? "disabled" : ""}`}>Change Some Answers</button>
+                                <button onClick={() => setCompleteQuiz(false)} className={`btn btn-md truman-btn ${!complete ? "disabled" : ""}`}>Change Some Answers</button>
                                 {
                                     answer
                                         ?
-                                        <button href="#" className="btn btn-lg truman-btn-light">Get Started Now<img src={Arrow} style={arrowStyle} /></button>
+                                        <button href="#" className="btn btn-md truman-btn-light">Get Started Now<img src={Arrow} style={arrowStyle} /></button>
                                         :
-                                        <button href="#" className="btn btn-lg truman-btn-light">Study Up</button>
+                                        <button href="#" className="btn btn-md truman-btn-light">Study Up</button>
                                 }
                             </div>
                     }

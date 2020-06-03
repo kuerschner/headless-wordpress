@@ -25,12 +25,13 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 700;
+	font-weight: 500;
 	font-family: 'Montserrat', sans-serif;
 }
 
 /* Typography */
 h1 {
+	font-weight: 700;
 	font-size: 2rem;
 	margin-top: 0.5rem;
 	margin-bottom: 1rem;
@@ -41,7 +42,6 @@ h2 {
 	font-size: 1.4rem;
 	margin-top: 0.5rem;
 	margin-bottom: 1rem;
-	text-transform: uppercase;
 }
 
 h3 {
@@ -113,7 +113,7 @@ button.truman-btn {
 	color: #fff;
 	background-color: #001743;
 	border-color: #001743;
-	border-radius: .15rem;
+	border-radius: 40px;
 }
 
 button.truman-btn:hover {
@@ -171,7 +171,7 @@ button.truman-btn-light.selected {
 .quiz-wrapper h2 {
 	margin: 0;
 	font-size: 1rem;
-	font-weight: 800;
+	font-weight: 600;
 }
 
 /* Price Page */
@@ -222,6 +222,21 @@ button.truman-btn-light.selected {
 		margin-left: 1rem;
 		padding-top: 0.2rem;
 	}
+}
+
+.sub-footer {
+	background-color: #0799d6;
+	color: #fff;
+}
+
+.column-text h2,
+.column-text h3 {
+	font-weight: 600;
+}
+
+.trt-columns h2,
+.trt-columns h3 {
+	font-weight: 600;
 }
 
 /* Global Animations */
@@ -337,10 +352,10 @@ button.truman-btn-light.selected {
 		font-size: 4rem;
 	} 
 	.quiz-headline h1 {
-		font-size: 3rem;
+		font-size: 2.6rem;
 	}
 	.quiz-wrapper h2 {
-		font-size: 2rem;
+		font-size: 1rem;
 	}
 }
 
@@ -357,12 +372,12 @@ button.truman-btn-light.selected {
 		font-size: 1.8rem;
 	}	
 	h3 {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 	.quiz-headline h1 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 	.quiz-wrapper h2 {
-		font-size: 1.6rem;
+		font-size: 1.2rem;
 	}
 }

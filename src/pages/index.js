@@ -40,7 +40,7 @@ const Home = () => {
 				<Hero image={data.hero_image} heading={data.hero_heading} content={data.hero_text} cta={data.hero_cta_text} ctaLink={data.hero_cta_link} />
 			</View>
 			<View>
-				<div className="container pt-5">
+				<div className="container py-5">
 					<div className="row">
 						<div className="col-12 mt-4">
 							<CenterText heading={data.section_two_heading} />
@@ -59,14 +59,7 @@ const Home = () => {
 				</div>
 			</View>
 			<View>
-				<div className="row">
-					<div className="container py-5">
-						<hr />
-					</div>
-				</div>
-			</View>
-			<View>
-				<div className="container">
+				<div className="container py-5 mb-5">
 					<div className="row">
 						<div className="col-12 mx-auto col-md-8 col-lg-6">
 							<LeftText heading={data.section_three_heading} content={data.section_three_description} />
@@ -81,18 +74,11 @@ const Home = () => {
 				</div>
 			</View>
 			<View>
-				<div className="row">
-					<div className="container py-5">
-						<hr />
-					</div>
-				</div>
-			</View>
-			<View>
-				<div className="container pb-5">
-					<div className="row">
-						<div className="col-12 text-center">
+				<div className="container-fluid py-5 sub-footer">
+					<div className="row d-flex justify-content-center">
+						<div className="col-12 col-md-12 col-lg-10 col-xl-10 text-center">
 							<CenterText heading={data.section_four_heading} />
-							<Button>See if you qualify</Button>
+							<Button type='button-secondary'>See if you qualify</Button>
 						</div>
 					</div>
 				</div>

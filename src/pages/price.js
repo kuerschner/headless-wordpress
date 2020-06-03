@@ -40,12 +40,12 @@ const Price = () => {
                             </div>
                             <div className="col-12 col-sm-12 col-md-6 mx-auto mt-4">
                                 <div className="card p-3 p-md-4 mx-auto w-75 shadow">
-                                    <h3 className="text-center">{data.price_card[0].card_title}</h3>
+                                    <h2 className="text-center">{data.price_card[0].card_title}</h2>
                                     <ul className="priceList p-0 m-0">
                                         {data.price_card[0].card_bullet.map(bullet => (
                                             <li className="priceItem" key={bullet.bullet_text}>
                                                 <span className="priceIcon"><FaCheck /></span>
-                                                <h4 className="priceText">{bullet.bullet_text}</h4>
+                                                <h5 className="priceText">{bullet.bullet_text}</h5>
                                             </li>
                                         ))}
                                     </ul>
@@ -54,13 +54,12 @@ const Price = () => {
                             </div>
                             <div className="col-12 col-sm-12 col-md-6 mx-auto mt-4">
                                 <div className="card p-3 p-md-4 mx-auto w-75 shadow">
-                                    <h3 className="text-center">{data.price_card[1].card_title}</h3>
+                                    <h2 className="text-center">{data.price_card[1].card_title}</h2>
                                     <ul className="priceList">
                                         {data.price_card[1].card_bullet.map(bullet => (
                                             <li className="priceItem" key={bullet.bullet_text}>
                                                 <span className="priceIcon"><FaCheck /></span>
-                                                <h4 className="priceText">{bullet.bullet_text}</h4>
-
+                                                <h5 className="priceText">{bullet.bullet_text}</h5>
                                             </li>
                                         ))}
                                     </ul>

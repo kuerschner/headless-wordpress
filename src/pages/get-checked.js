@@ -38,13 +38,11 @@ const GetChecked = () => {
             </View>
             <Quiz />
             <View>
-                <div className="container pb-5">
-                    <div className="row m-4 d-flex justify-content-center align-items-between h-100">
-                        <div className="col-12 mx-auto">
+                <div className="container-fluid py-5 sub-footer">
+                    <div className="row d-flex justify-content-center">
+                        <div className="col-12 col-md-12 col-lg-10 col-xl-10 text-center">
                             <CenterText heading={data.section_three_heading} />
-                        </div>
-                        <div className="col-12 mx-auto d-flex justify-content-center align-items-center">
-                            <a href={data.section_three_cta_link}><Button>{data.section_three_cta}</Button></a>
+                            <a href={data.section_three_cta_link}><Button type='button-secondary'>{data.section_three_cta}</Button></a>
                         </div>
                     </div>
                 </div>
