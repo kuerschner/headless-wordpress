@@ -22,22 +22,24 @@ const Hero = ({ image, heading, subheading, content, cta, ctaLink, ctaTwo, ctaTw
         <div id="home" className="root" style={{ backgroundImage: `url(${image.url})`, height: "auto" }}>
             <div className="container-fluid">
                 <div className={`row d-flex align-items-center h-100 min-vh-100 ${textFloat}`}>
-                    <div className="col-12 col-sm-12 col-md-7 col-lg-6 heroTextContainer left px-3">
-                        <Fade bottom>
-                            <>
-                                {heading && <h1 className="text-white">{heading}</h1>}
-                                {subheading && <h2>{subheading}</h2>}
-                                {content && <p className="text-white">{content}</p>}
-                                <div className="d-flex flex-direction-row justify-content-center">
-                                    {cta && <div className="py-4 px-2 mt-4">
-                                        <a href={ctaLink}><Button>{cta}</Button></a>
-                                    </div>}
-                                    {ctaTwo && <div className="py-4 px-2 mt-4">
-                                        <a href={ctaTwoLink}><Button type='button-secondary'>{ctaTwo}</Button></a>
-                                    </div>}
-                                </div>
-                            </>
-                        </Fade>
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-5 heroTextContainer ">
+                        <div className='px-5'>
+                            <Fade bottom>
+                                <>
+                                    {heading && <h1 className="text-white">{heading}</h1>}
+                                    {subheading && <h2>{subheading}</h2>}
+                                    {content && <p className="text-white">{content}</p>}
+                                    <div className="d-flex flex-direction-row justify-content-center">
+                                        {cta && <div className="py-4 px-2 mt-4">
+                                            <a href={ctaLink}><Button>{cta}</Button></a>
+                                        </div>}
+                                        {ctaTwo && <div className="py-4 px-2 mt-4">
+                                            <a href={ctaTwoLink}><Button type='button-secondary'>{ctaTwo}</Button></a>
+                                        </div>}
+                                    </div>
+                                </>
+                            </Fade>
+                        </div>
                     </div>
                 </div>
             </div>
