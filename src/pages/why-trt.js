@@ -58,7 +58,7 @@ const TRT = () => {
                 <View>
                     <div className="min-vh-100 container-fluid" style={{ backgroundImage: `url(${data.section_three_background_image.url})`, backgroundSize: "cover" }}>
                         <div className="min-vh-100 row d-flex justify-content-lg-end">
-                            <div className="col-12 col-lg-8 col-xl-7 trt-bg-overlay min-vh-100 d-flex align-items-center py-5">
+                            <div className="col-12 col-lg-7 col-xl-6 trt-bg-overlay min-vh-100 d-flex align-items-center py-5">
                                 <div className="row">
                                     <div className="col-12">
                                         <CenterText heading={data.section_three_heading} content={data.section_three_subheading} />

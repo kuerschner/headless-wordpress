@@ -94,12 +94,12 @@ const Blog = () => {
         <Layout title={title && title.rendered} meta={meta}>
             {data && 
             <>
-            <BannerHero heading={data.blog_hero} />
+            
+            <BannerHero backgroundImage={data.blog_hero_image} heading={data.blog_hero} subheading={data.blog_headline} kind='textRight' />
             <div className="container">
                 <div className="row">
                     <div className="col-12 text-center mx-auto p-5">
-                        <h2>{data.blog_headline}</h2>
-                        <h3>{data.blog_subheading}</h3>
+                        <h2>{data.blog_subheading}</h2>
                         {/* TODO: Add Filtering Here */}
                     </div>
                 </div>

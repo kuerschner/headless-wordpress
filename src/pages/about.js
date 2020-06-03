@@ -40,10 +40,14 @@ const About = () => {
                         <div className="col-12 mx-auto col-md-8 col-lg-6 min-vh-100 d-flex align-items-center px-5">
                             <div className="row">
                                 <div className="col-12 text-center">
+                                   <img src={data.section_one_icon.url} alt={data.section_one_icon.alt} />
+                                </div>
+                                <div className="col-12 text-center">
                                     <h1>{data.section_one_heading}</h1>
                                 </div>
                                 <div className="col-12">
                                     <p>{data.section_one_subheading}</p>
+                                    <h5 className="py-5">{data.section_one_callout}</h5>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +106,7 @@ const About = () => {
                 <div className="container-fluid py-5 sub-footer">
                     <div className="row d-flex justify-content-center">
                         <div className="col-12 col-md-12 col-lg-10 col-xl-10 text-center">
-                            <CenterText heading={data.section_five_heading} />
+                            <CenterText heading={data.section_five_main_heading} subHeading={data.section_five_heading} />
                         </div>
                     </div>
                 </div>

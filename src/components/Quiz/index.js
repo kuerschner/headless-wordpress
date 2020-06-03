@@ -5,7 +5,7 @@ import Arrow from "../../images/arrow-right-solid.svg";
 const initSelections = [
     {
         id: 1,
-        question: `Do you feel like you"re past your prime?`,
+        question: `Do you feel like you're past your prime?`,
         answer: null
     },
     {
@@ -25,7 +25,7 @@ const initSelections = [
     },
     {
         id: 5,
-        question: `Are your erections less strong?`,
+        question: `Do you have weaker erections than before?`,
         answer: null
     },
     {
@@ -35,7 +35,7 @@ const initSelections = [
     },
     {
         id: 7,
-        question: `Do you ever have depression or anxiety??`,
+        question: `Do you ever have depression or anxiety?`,
         answer: null
     },
     {
@@ -101,7 +101,7 @@ const Quiz = () => {
 
     const questions = selections.map((val, key) => {
         return (
-            <div className="quiz-wrapper row d-flex justify-content-center py-4" key={key}>
+            <div className="quiz-wrapper row d-flex justify-content-center py-4" key={key} id='quiz'>
                 <div className="col-12 col-lg-10">
                     <div className="question text-center px-xl-5">
                         <h2>{val.question}</h2>
@@ -133,7 +133,7 @@ const Quiz = () => {
         <div className="container py-5 truman-quiz">
             <div className="row d-flex justify-content-center">
                 <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
-                    <h1>{!completeQuiz ? `See If You Qualify!` : answer ? responseArr[0] : responseArr[1]}</h1>
+                    <h1>{!completeQuiz ? `Take the quiz to see if you should get checked.` : answer ? responseArr[0] : responseArr[1]}</h1>
                 </div>
             </div>
             {!completeQuiz ? questions : null}

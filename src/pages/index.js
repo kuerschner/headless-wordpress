@@ -37,7 +37,7 @@ const Home = () => {
 			{data && 
 			<>
 			<View>
-				<Hero image={data.hero_image} heading={data.hero_heading} content={data.hero_text} cta={data.hero_cta_text} ctaLink={data.hero_cta_link} />
+				<Hero image={data.hero_image} heading={data.hero_heading} content={data.hero_text} cta={data.hero_cta_text} ctaLink={data.hero_cta_link} kind='textLeft' />
 			</View>
 			<View>
 				<div className="container py-5">
