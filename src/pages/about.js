@@ -77,19 +77,23 @@ const About = () => {
                         <div className="col-12 pb-4">
                             <CenterText heading={data.section_four_1_heading} />
                         </div>
-                        <div className="row d-flex justify-content-center">
-                            {data.section_four_1_icons.map((value, key) =>
-                                <div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
-                                    <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
-                                </div>
-                            )}
+                        <div className="col-12">
+                            <div className="row d-flex justify-content-center">
+                                {data.section_four_1_icons.map((value, key) =>
+                                    <div className="col-12 col-md-6 col-lg-3 text-center mx-5" key={key}>
+                                        <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                        <div className="row d-flex justify-content-center mt-5">
-                            {data.section_four_2_icons.map((value, key) =>
-                                <div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
-                                    <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
-                                </div>
-                            )}
+                        <div className="col-12">
+                            <div className="row d-flex justify-content-around mt-5">
+                                {data.section_four_2_icons.map((value, key) =>
+                                    <div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
+                                        <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
