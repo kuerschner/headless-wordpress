@@ -55,25 +55,11 @@ const About = () => {
                 </div>
             </View>
             <View>
-                <div className="row">
-                    <div className="container py-5">
-                        <hr />
-                    </div>
-                </div>
-            </View>
-            <View>
-                <div className="container">
+                <div className="container py-5 mt-5">
                     <VideoText type="textRight" heading={data.section_two_heading} subHeading={data.section_two_subheading} src={data.section_two_video} />
                 </div>
             </View>
-            <View>
-                <div className="row">
-                    <div className="container py-5">
-                        <hr />
-                    </div>
-                </div>
-            </View>
-            <View>
+            {/* <View>
                 <div className="container pb-5">
                     <div className="row d-flex justify-content-around">
                         <div className="col-12">
@@ -84,22 +70,31 @@ const About = () => {
                 <div className="container-fluid mb-5">
                     <div className="row" style={{ backgroundImage: `url(${data.section_three_image.url})`, backgroundSize: "cover", height: "600px", backgroundPosition: "center" }}></div>
                 </div>
-            </View>
+            </View> */}
             <View>
                 <div className="container py-5">
                     <div className="row d-flex justify-content-around">
                         <div className="col-12 pb-4">
-                            <CenterText heading={data.section_four_heading} />
+                            <CenterText heading={data.section_four_1_heading} />
                         </div>
-                        {data.section_four_icons.map((value, key) =>
-                            <div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
-                                <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
-                            </div>
-                        )}
+                        <div className="row d-flex justify-content-center">
+                            {data.section_four_1_icons.map((value, key) =>
+                                <div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
+                                    <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
+                                </div>
+                            )}
+                        </div>
+                        <div className="row d-flex justify-content-center mt-5">
+                            {data.section_four_2_icons.map((value, key) =>
+                                <div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
+                                    <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
                 <div className="container-fluid mt-5">
-                    <div className="row" style={{ backgroundImage: `url(${data.section_four_image.url})`, backgroundSize: "cover", height: "400px", backgroundPosition: "center" }}></div>
+                    <div className="row" style={{ backgroundImage: `url(${data.section_four_2_image.url})`, backgroundSize: "cover", height: "400px", backgroundPosition: "center" }}></div>
                 </div>
             </View>
             <View>
