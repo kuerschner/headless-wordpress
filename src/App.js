@@ -6,6 +6,10 @@ import GetChecked from "./pages/get-checked";
 import Home from "./pages/index";
 import Price from "./pages/price";
 import PrivacyPolicy from "./pages/privacy-policy";
+import Faq from "./pages/faq";
+import TermsAndConditions from "./pages/terms-and-conditions";
+import Disclaimer from "./pages/disclaimer";
+import TelehealthConsent from "./pages/telehealth-consent";
 import WhyTrt from "./pages/why-trt";
 import Members from "./pages/members";
 import "./css/bootstrap-grid.css";
@@ -55,6 +59,18 @@ function App() {
 					</Route>
 					<Route exact path="/privacy-policy">
 						<PrivacyPolicy activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
+					</Route>
+					<Route exact path="/terms-and-conditions">
+						<TermsAndConditions activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
+					</Route>
+					<Route exact path="/faq">
+						<Faq activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
+					</Route>
+					<Route exact path="/disclaimer">
+						<Disclaimer activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
+					</Route>
+					<Route exact path="/telehealth-consent">
+						<TelehealthConsent activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
 					</Route>
 				</Switch>
 			</Router>

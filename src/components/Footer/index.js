@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 const Footer = props => {
@@ -11,14 +12,14 @@ const Footer = props => {
                             &copy; Tr<span className="accentedU">u</span>man Rx 2020
                         </div>
                         <div className="col-12 col-sm-12 col-md-3">
-                            <a className="footerLink d-block" href="">Disclaimer</a>
-                            <a className="footerLink d-block" href="">FAQ</a>
+                            <Link className="footerLink d-block" to="disclaimer">Disclaimer</Link>
+                            <Link className="footerLink d-block" to="faq">FAQ</Link>
                             <a className="footerLink" href="mailto:info@trumanrx.com">info@trumanrx.com</a>
                         </div>
                         <div className="col-12 col-sm-12 col-md-3">
-                            <a className="footerLink d-block" href="/privacy-policy">Privacy Policy</a>
-                            <a className="footerLink d-block" href="">Terms & Conditions</a>
-                            <a className="footerLink d-block" href="">Telehealth Consent</a>
+                            <Link className="footerLink d-block" to="privacy-policy">Privacy Policy</Link>
+                            <Link className="footerLink d-block" to="terms-and-conditions">Terms and Conditions</Link>
+                            <Link className="footerLink d-block" to="telehealth-consent">Telehealth Consent</Link>
                         </div>
                         <div className="col-12 col-sm-12 col-md-3">
 
@@ -38,12 +39,11 @@ const Footer = props => {
                     <div className="col-12" >
                         <div className="d-flex flex-column justify-content-center align-items-center">
                             <a className="footerLink" href="mailto:info@trumanrx.com">info@trumanrx.com</a>
-                            <a className="footerLink" href="/privacy-policy">Privacy Policy</a>
-                            <a className="footerLink" href="">Telehealth Consent</a>
-                            <a className="footerLink" href="">Privacy Policy</a>
-                            <a className="footerLink" href="">Terms & Conditions</a>
-                            <a className="footerLink" href="">Disclaimer</a>
-                            <a className="footerLink" href="">FAQ</a>
+                            <Link to="telehealth-consent">Telehealth Consent</Link>
+                            <Link to="privacy-policy">Privacy Policy</Link>
+                            <Link to="terms-and-conditions">Terms and Conditions</Link>
+                            <Link to="disclaimer">Disclaimer</Link>
+                            <Link to="faq">FAQ</Link>
                         </div>
                     </div>
                 </div>

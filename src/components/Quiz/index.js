@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import CheckBox from "../../images/check-solid.svg";
 import Arrow from "../../images/arrow-right-solid.svg";
+import HubspotForm from "react-hubspot-form";
 
 const initSelections = [
     {
@@ -57,6 +58,7 @@ const Quiz = () => {
     const [complete, setComplete] = useState(false);
     const [completeQuiz, setCompleteQuiz] = useState(false);
     const [answer, setAnswer] = useState(null);
+    const [showAnswers, setShowAnswers] = useState(false);
 
     const responseArr = [`Based on your answers, you may benefit from testosterone replacement therapy through Trūman.`, `Testosterone replacement therapy might not be the type of treatment you need. If you"re interested in learning more about men"s health, study up with our blog.`];
 
@@ -67,7 +69,11 @@ const Quiz = () => {
         const replacementObject = { ...objectToReplace, answer: selection };
         answers.splice(questionKey, 1, replacementObject);
         setSelections([...answers]);
-    })
+    });
+
+    const hideForm = () => {
+        
+    }
 
     const checkStyle = {
         width: "16px",
@@ -84,7 +90,7 @@ const Quiz = () => {
         marginRight: "10px",
         position: "relative",
         marginLeft: "10px",
-        verticalAlign: "text-bottom"
+        verticalAlign: "bottom"
     }
 
     useEffect(() => {
@@ -98,6 +104,15 @@ const Quiz = () => {
             else setAnswer(false);
         }
     }, [completeQuiz, selections]);
+
+    useEffect(() => {
+        window.addEventListener('message', event => {
+            if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit') {
+                setShowAnswers(true);
+            }
+        });
+        console.log("showAnswers: ", showAnswers);
+    });
 
     const questions = selections.map((val, key) => {
         return (
@@ -130,33 +145,46 @@ const Quiz = () => {
     });
 
     return (
-        <div className="container py-5 truman-quiz">
-            <div className="row d-flex justify-content-center">
-                <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
-                    <h1>{!completeQuiz ? `Take the quiz to see if you should get checked.` : answer ? responseArr[0] : responseArr[1]}</h1>
+        <div className="container py-5">
+            { !showAnswers ?
+                <div className="row d-flex justify-content-center">
+                    <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
+                        { 
+                            !completeQuiz 
+                                ? 
+                                    <h1>Take the quiz to see if you should get checked.</h1> 
+                                :
+                                    <HubspotForm
+                                        portalId='7044962'
+                                        formId='7218a722-8f3b-4224-a462-4052149247c5'
+                                        onReady={(form) => console.log('Form ready!')}
+                                        loading={<div>Loading...</div>}
+                                    />
+                        }              
+                    </div>
+                    <div className="col-12 text-center quiz-complete pt-4 mb-4">
+                        {!completeQuiz ? questions : null}
+                    </div>
+                    <div className="col-12 text-center quiz-complete pt-4 mb-4">
+                        { !completeQuiz && <button onClick={() => setCompleteQuiz(true)} className={`btn btn-md truman-btn ${!complete ? "disabled" : ""}`}>Complete</button> }
+                    </div>
                 </div>
-            </div>
-            {!completeQuiz ? questions : null}
-            <div className="row">
-                <div className="col-12 text-center quiz-complete pt-4 mb-4">
-                    {
-                        !completeQuiz
-                            ?
-                            <button onClick={() => setCompleteQuiz(true)} className={`btn btn-md truman-btn ${!complete ? "disabled" : ""}`}>Complete</button>
-                            :
-                            <div className="btn-group" role="group">
-                                <button onClick={() => setCompleteQuiz(false)} className={`btn btn-md truman-btn ${!complete ? "disabled" : ""}`}>Change Some Answers</button>
-                                {
-                                    answer
-                                        ?
-                                        <button href="#" className="btn btn-md truman-btn-light">Get Started Now<img src={Arrow} style={arrowStyle} /></button>
-                                        :
-                                        <button href="#" className="btn btn-md truman-btn-light">Study Up</button>
-                                }
+                :
+                <div className="row d-flex justify-content-center">
+                    { answer 
+                        ?
+                            <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
+                                <h1 className="mb-4">{responseArr[0]}</h1>
+                                <button href="#" className="btn btn-md truman-btn-light">Get Started Now<img src={Arrow} style={arrowStyle} /></button>
+                            </div>
+                        :
+                            <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
+                                <h1 className="mb-4">{responseArr[1]}</h1>
+                                <button href="#" className="btn btn-md truman-btn-light">Study Up</button>
                             </div>
                     }
                 </div>
-            </div>
+            }
         </div>
     )
 }

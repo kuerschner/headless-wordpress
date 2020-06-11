@@ -4,14 +4,14 @@ import parse from 'html-react-parser';
 import Layout from "../components/Layout";
 import View from "../components/View";
 
-const PrivacyPolicy = () => {
+const TermsAndConditions = () => {
     const [content, setContent] = useState(null)
     const [title, setTitle] = useState(null)
     const [meta, setMeta] = useState(null)
 
     async function makeGetRequest() {
 
-        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/369')
+        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/371')
 		.then(res => {
                 const responseTitle = res.data.title;
                 const responseContent = res.data.content;
@@ -39,4 +39,4 @@ const PrivacyPolicy = () => {
     )
 }
 
-export default PrivacyPolicy;
+export default TermsAndConditions;
