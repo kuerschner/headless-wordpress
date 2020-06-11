@@ -58,18 +58,19 @@ const Home = () => {
 					</div>
 				</div>
 			</View>
-			<View>
+			<View style={{backgroundImage: `url(${data.section_three_background_image.url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
 				<div className="container py-5 mb-5">
 					<div className="row">
-						<div className="col-12 mx-auto col-md-8 col-lg-6">
+					<div className="d-none d-lg-block col-12 col-lg-6 text-center">
+							
+							</div>
+						<div className="col-12 mx-auto col-md-8 col-lg-6 blue-background">
 							<LeftText heading={data.section_three_heading} content={data.section_three_description} />
 							{data.section_three_items.map((value, key) =>
 								<IconHeading key={key} heading={value.icon_heading} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
 							)}
 						</div>
-						<div className="d-none d-lg-block col-12 col-lg-6 text-center">
-							<img className="img-fluid" src={data.section_three_background_image.url} alt={data.section_three_background_image.alt} />
-						</div>
+
 					</div>
 				</div>
 			</View>

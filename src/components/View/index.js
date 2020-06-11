@@ -1,9 +1,9 @@
 import React from "react"
 
-export default ({ children }) => {
+export default (props) => {
     return (
-        <div className="d-block">
-            {children}
+        <div className="d-block" {...props}>
+            {props.children}
         </div>
     )
 }
