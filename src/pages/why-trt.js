@@ -6,6 +6,7 @@ import CenterText from "../components/CenterText";
 import IconText from "../components/IconText";
 import Button from "../components/Button";
 import Carousel from "../components/Carousel";
+import parse from 'html-react-parser';
 
 const TRT = () => {
 
@@ -46,12 +47,12 @@ const TRT = () => {
                                     <div className="text-center">
                                         <img src={section.image.url} alt={section.image.alt} style={{ maxHeight: "300px" }} />
                                     </div>
-                                    <CenterText heading={section.heading} content={section.text_area} />
+                                    <CenterText heading={section.heading} content={parse(section.text_area)} />
                                 </div>
                             ))}
-                            <div className="col-12 mx-auto text-center pt-5">
+                            {/* <div className="col-12 mx-auto text-center pt-5">
                                 <CenterText heading={data.section_two_subheading} />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </View>
@@ -83,7 +84,7 @@ const TRT = () => {
                                 <div className="row">
                                     {data.section_four_icons.map(section => (
                                         <div className="col-6">
-                                            <IconText icon={section.icon} heading={section.heading} content={section.text_area} />
+                                            <IconText heading={section.heading} content={section.text_area} iconUrl={section.icon.url} iconAlt={section.icon.alt}/>
                                         </div>
                                     ))}
                                 </div>

@@ -257,6 +257,10 @@ button.truman-btn-light.selected {
 	font-weight: 600;
 }
 
+.trt-columns ul {
+	text-align: left;
+}
+
 /* Global Animations */
 
 .shake-vertical {

@@ -4,7 +4,7 @@ export default ({ iconUrl, iconAlt, heading, content }) => (
     <div className="row">
         <div className="col-12">
             <div className="row d-flex justify-content-center">
-                <div className="col-8 my-4">
+                <div className="col-4 col-lg-6 my-4">
                     {iconUrl && <img className="img-fluid" src={iconUrl} alt={iconAlt} />}
                 </div>
             </div>

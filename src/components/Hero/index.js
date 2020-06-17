@@ -23,7 +23,7 @@ const Hero = ({ image, heading, subheading, content, cta, ctaLink, ctaTwo, ctaTw
             <div className="container-fluid">
                 <div className={`row d-flex align-items-center h-100 min-vh-100 ${textFloat}`}>
                     <div className="col-12 col-sm-12 col-md-6 col-lg-5 heroTextContainer ">
-                        <div className='px-5'>
+                        <div className="px-lg-5">
                             <Fade bottom>
                                 <>
                                     {heading && <h1 className="text-white">{heading}</h1>}
