@@ -38,14 +38,14 @@ const About = () => {
                     <div className="row min-vh-100">
                         <div className="d-none d-md-block col-md-6 col-lg-6" style={{ backgroundImage: `url(${data.section_one_image.url})`, backgroundSize: "cover" }}></div>
                         <div className="col-12 mx-auto col-md-8 col-lg-6 min-vh-100 d-flex align-items-center px-5">
-                            <div className="row">
-                                <div className="col-12 text-center">
-                                   <img src={data.section_one_icon.url} alt={data.section_one_icon.alt} />
+                            <div className="row d-flex justify-content-center">
+                                <div className="col-4 text-center mb-4">
+                                   <img className="img-fluid" src={data.section_one_icon.url} alt={data.section_one_icon.alt} />
                                 </div>
                                 <div className="col-12 text-center">
                                     <h1>{data.section_one_heading}</h1>
                                 </div>
-                                <div className="col-12">
+                                <div className="col-12 text-center">
                                     <p>{data.section_one_subheading}</p>
                                     <h5 className="py-5">{data.section_one_callout}</h5>
                                 </div>
