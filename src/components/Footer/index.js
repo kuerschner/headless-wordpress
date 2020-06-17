@@ -8,23 +8,23 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 
 import "./styles.css";
 
-const Footer = props => {
+const Footer = () => {
     return (
         <div className="footerContainer container-fluid">
             <div className="desktopFooter row d-flex justify-content-center">
                 <div className="col-12 col-md-10">
                     <div className="row">
                         <div className="col-12 text-center text-md-left col-md-3">
-                            <Link className="footerLink d-block py-2 py-md-0" to="disclaimer">Disclaimer</Link>
-                            <Link className="footerLink d-block py-2 py-md-0" to="faq">FAQ</Link>
-                        </div>
-                        <div className="col-12 text-center text-md-left col-md-3">
-                            <a className="footerLink py-2 py-md-0" href="mailto:info@trumanrx.com">info@trumanrx.com</a>
-                            <Link className="footerLink d-block py-2 py-md-0" to="privacy-policy">Privacy Policy</Link>
+                            <Link className="footerLink d-block py-2 py-md-0" to="telehealth-consent">Telehealth Consent</Link>
+                            <Link className="footerLink d-block py-2 py-md-0" to="privacy-policy">Privacy Policy</Link>  
                         </div>
                         <div className="col-12 text-center text-md-left col-md-3">
                             <Link className="footerLink d-block py-2 py-md-0" to="terms-and-conditions">Terms and Conditions</Link>
-                            <Link className="footerLink d-block py-2 py-md-0" to="telehealth-consent">Telehealth Consent</Link>
+                            <Link className="footerLink d-block py-2 py-md-0" to="disclaimer">Disclaimer</Link>    
+                        </div>
+                        <div className="col-12 text-center text-md-left col-md-3">
+                            <Link className="footerLink d-block py-2 py-md-0" to="faq">FAQ</Link>
+                            <a className="footerLink py-2 py-md-0" href="mailto:info@trumanrx.com">info@trumanrx.com</a>
                         </div>
                         <div className="col-12 col-sm-12 col-md-3">
                             <div className="row d-flex justify-content-center py-4 py-md-0">

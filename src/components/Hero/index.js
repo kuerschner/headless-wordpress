@@ -19,7 +19,7 @@ const Hero = ({ image, heading, subheading, content, cta, ctaLink, ctaTwo, ctaTw
 
     return(
     
-        <div id="home" className="root" style={{ backgroundImage: `url(${image.url})`, height: "auto" }}>
+        <div id="home" className="root" style={{ backgroundImage: `url(${image.url})`, height: "auto", backgroundPosition: "center" }}>
             <div className="container-fluid">
                 <div className={`row d-flex align-items-center h-100 min-vh-100 ${textFloat}`}>
                     <div className="col-12 col-sm-12 col-md-6 col-lg-5 heroTextContainer ">
