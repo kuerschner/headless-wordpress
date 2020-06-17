@@ -34,7 +34,7 @@ const GetChecked = () => {
             {data && 
             <>
             <View>
-                <Hero image={data.section_one_image} heading={data.section_one_heading} content={data.section_one_subheading} cta={data.section_one_cta_one} ctaLink={data.section_one_cta_one_link} ctaTwo={data.section_one_cta_two} ctaTwoLink={data.section_one_cta_two_link} />
+                <Hero className="quiz-hero" image={data.section_one_image} heading={data.section_one_heading} content={data.section_one_subheading} cta={data.section_one_cta_one} ctaLink={data.section_one_cta_one_link} ctaTwo={data.section_one_cta_two} ctaTwoLink={data.section_one_cta_two_link} />
             </View>
             <Quiz />
             <View>

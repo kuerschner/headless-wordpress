@@ -404,3 +404,10 @@ button.truman-btn-light.selected {
 		font-size: 1.2rem;
 	}
 }
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width: 992px) { 
+	.quiz-hero{ 
+		display: none;
+	}
+}

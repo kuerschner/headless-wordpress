@@ -36,8 +36,8 @@ const Contact = () => {
             {data && 
             <>
             <div className="container">
-                <div className="row">
-                    <div className="col-12 col-sm-12 col-md-6 mx-auto p-5 text-center">
+                <div className="row d-flex justify-content-center">
+                    <div className="col-12 col-sm-12 col-md-10 col-lg-8 mx-auto p-5 text-center">
                         <h2>{data.contact_form_heading}</h2>
                         <div className="formContainer">
                             <HubspotForm
@@ -49,7 +49,7 @@ const Contact = () => {
                             />
                         </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-6 mx-auto p-5 text-center">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-8 mx-auto p-5 text-center">
                         <h2>{data.icon_heading}</h2>
                         <div className="row">
                             {/* Assuming these are going to be social links */}
