@@ -28,13 +28,12 @@ const PrivacyPolicy = () => {
 
     return (
         <Layout title={title && title.rendered} meta={meta}>
-            {content && 
-                <View>
-                    <div className="container py-5">
-                        {parse(content.rendered)}
-                    </div>
-                </View>
-            }
+            <View>
+                <div className="container py-5">
+                    {title && <h1 className="mb-4">{title.rendered}</h1>}
+                    {content && parse(content.rendered)}
+                </div>
+            </View>
         </Layout>
     )
 }

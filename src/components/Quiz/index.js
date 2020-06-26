@@ -152,14 +152,17 @@ const Quiz = () => {
                         { 
                             !completeQuiz 
                                 ? 
-                                    <h1>Take the quiz to see if you should get checked.</h1> 
+                                    <h1>Take the quiz to see if you should get checked.</h1>
                                 :
+                                    <>
+                                    <h2 className="mb-4">One more step so we can provide you with an answer and helpful health information.</h2>
                                     <HubspotForm
                                         portalId='7044962'
                                         formId='7218a722-8f3b-4224-a462-4052149247c5'
                                         onReady={(form) => console.log('Form ready!')}
                                         loading={<div>Loading...</div>}
                                     />
+                                    </>
                         }              
                     </div>
                     <div className="col-12 text-center quiz-complete pt-4 mb-4">

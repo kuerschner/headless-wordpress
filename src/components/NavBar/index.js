@@ -18,8 +18,8 @@ const NavBar = () => {
   const { pathname } = useLocation();
   return (
     <div>
-      <Navbar expand="md">
-        <a href="/" className="logoImgLink"><img className="logoImg" src={require("../../images/logo.svg")} alt="Truman RX Logo"/></a>
+      <Navbar expand="md fixed-top">
+        <a href="/" className="logoImgLink img-fluid"><img className="logoImg" src={require("../../images/logo.svg")} alt="Truman RX Logo"/></a>
         <NavbarToggler onClick={toggle}>{isOpen ? <FaTimes color="#fff" /> : <FaBars color="#fff" />} </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

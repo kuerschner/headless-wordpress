@@ -26,14 +26,11 @@
     color: #fff;
 }
 
-.logoImg {
-    max-width: 160px;
+.logoImgLink {
+    position: relative;
+    display: inline-block;
+    width: 150px;
     height: auto;
-}
-
-.logoImgLink > img {
-    width: 100%;
-    margin-left: 1rem;
 }
 
 .selectionLine {
@@ -69,7 +66,6 @@
     .navbar-nav {
         padding: 30px 0;
     }
-
     .selectionLine {
         background-color: #0799d6;
         height: 1px;
@@ -77,7 +73,6 @@
         margin: 0.25rem auto 0;
         position: relative;
     }
-
     .horizontalBar {
         display: none;
     }
@@ -92,13 +87,11 @@
         font-size: 0.75rem;
         font-weight: 600;
     }
-
     .navItem {
         margin: 0;
     }
-
     .horizontalBar {
-        padding-top: 1rem;
+        padding-top: 3rem;
         height: 25px;
         width: 1px;
         background-color: #0799d6;
@@ -107,6 +100,12 @@
 
 @media screen and (min-width: 768px) {
     .navbar {
-        padding: 20px 15px !important;
+        padding: 30px 15px !important;
+    }
+    .logoImgLink {
+        position: absolute;
+        display: inline-block;
+        width: 150px;
+        height: auto;
     }
 }

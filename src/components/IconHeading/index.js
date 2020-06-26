@@ -3,7 +3,7 @@ import React from "react"
 export default ({ heading, subHeading, iconUrl, iconAlt }) => {
     return (
         <div className="row d-flex justify-content-center">
-            <div className="col-5 col-lg-3 my-4">
+            <div className="col-3 col-lg-2 my-4">
                 {iconUrl && <img className="img-fluid" src={iconUrl} alt={iconAlt} />}
             </div>
             <div className="col-10 col-sm-8 col-md-6 col-lg-9">

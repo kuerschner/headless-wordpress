@@ -1,5 +1,7 @@
 .button-main {
     background-color: #0799d6;
+    position: relative;
+    display: block;
     color: #fff;
     padding: 0.75rem 2rem;
     font-size: 1rem;
@@ -32,6 +34,8 @@
 
 .button-secondary {
     color: #0799d6;
+    position: relative;
+    display: block;
     background-color: #fff;
     padding: 0.75rem 2rem;
     font-size: 1rem;

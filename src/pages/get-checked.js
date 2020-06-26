@@ -2,10 +2,10 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Layout from "../components/Layout";
 import View from "../components/View";
-import CenterText from "../components/CenterText";
-import Button from "../components/Button";
-import Hero from "../components/Hero";
 import Quiz from "../components/Quiz";
+import Fade from "react-reveal/Fade";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import parse from 'html-react-parser';
 
 const GetChecked = () => {
     const [data, setData] = useState(null)
@@ -34,19 +34,42 @@ const GetChecked = () => {
             {data && 
             <>
             <View>
-                <Hero className="quiz-hero" image={data.section_one_image} heading={data.section_one_heading} content={data.section_one_subheading} cta={data.section_one_cta_one} ctaLink={data.section_one_cta_one_link} ctaTwo={data.section_one_cta_two} ctaTwoLink={data.section_one_cta_two_link} />
+                <div className="hero" style={{ backgroundImage: `url(${data.section_one_image.url})`, backgroundPosition: "center", backgroundSize: "cover" }}>
+					<div className="container-fluid">
+						<div className="row d-flex align-items-center h-100 min-vh-100">
+							<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 heroTextContainer px-5 d-flex align-items-center">
+								<Fade bottom>
+									<div className="text-center">
+										{data.section_one_heading && <h1 className="text-white">{parse(data.section_one_heading)}</h1>}
+										<div className="heading-border mt-3 mb-4 mx-auto"></div>
+										{data.section_one_subheading && <p className="text-white">{data.section_one_subheading}</p>}
+										<div className="row d-flex justify-content-center">
+											{
+												data.section_one_cta_one && 
+													<div className="col-12 col-lg-6">
+                                                        <a href={data.section_one_cta_one_link} className="button button-main mt-4">{data.section_one_cta_one}</a>
+													</div>
+											}
+                                            {
+												data.section_one_cta_two && 
+													<div className="col-12 col-lg-6">
+                                                        <a href={data.section_one_cta_two_link} className="button button-main mt-4">{data.section_one_cta_two}</a>
+													</div>
+											}
+										</div>
+									</div>
+								</Fade>
+							</div>
+						</div>
+					</div>
+					<div className="scroll-indicator shake-vertical">
+						<ExpandMoreIcon fontSize="inherit" />
+						<ExpandMoreIcon fontSize="inherit" />
+						<ExpandMoreIcon fontSize="inherit" />
+					</div>
+				</div>
             </View>
             <Quiz />
-            <View>
-                <div className="container-fluid py-5 sub-footer">
-                    <div className="row d-flex justify-content-center">
-                        <div className="col-12 col-md-12 col-lg-10 col-xl-10 text-center">
-                            <CenterText heading={data.section_three_heading} />
-                            <a href={data.section_three_cta_link}><Button type='button-secondary'>{data.section_three_cta}</Button></a>
-                        </div>
-                    </div>
-                </div>
-            </View>
             </>
             }
         </Layout>

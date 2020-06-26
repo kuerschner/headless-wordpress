@@ -19,7 +19,7 @@ export default function Layout(props) {
 
             <main>
                 <NavBar />
-                {props.children}
+                <div className="app-body">{props.children}</div>
             </main>
 
             <footer>
