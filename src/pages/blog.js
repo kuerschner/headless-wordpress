@@ -3,8 +3,10 @@ import axios from "axios";
 import Layout from "../components/Layout";
 import BannerHero from "../components/BannerHero";
 import BlogPost from "../components/BlogPost";
-import image1 from "../images/section3bg.jpg";
 import image2 from "../images/bgMain.jpg";
+import Fade from "react-reveal/Fade";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import parse from 'html-react-parser';
 
 // TO DO: 
 // 1. Connect Blog Posts
@@ -94,8 +96,26 @@ const Blog = () => {
         <Layout title={title && title.rendered} meta={meta}>
             {data && 
             <>
-            
-            <BannerHero backgroundImage={data.blog_hero_image} heading={data.blog_hero} subheading={data.blog_headline} kind='textRight' />
+                <div className="hero" style={{ backgroundImage: `url(${data.blog_hero_image.url})`, backgroundPosition: "center", backgroundSize: "cover" }}>
+					<div className="container-fluid">
+						<div className="row d-flex align-items-center justify-content-end h-100 min-vh-100">
+							<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 heroTextContainer px-5 d-flex align-items-center">
+								<Fade bottom>
+									<div className="text-center">
+										{data.blog_hero && <h1 className="text-white">{parse(data.blog_hero)}</h1>}
+										<div className="heading-border mt-3 mb-4 mx-auto"></div>
+										{data.blog_headline && <p className="text-white">{data.blog_headline}</p>}
+									</div>
+								</Fade>
+							</div>
+						</div>
+					</div>
+					<div className="scroll-indicator shake-vertical">
+						<ExpandMoreIcon fontSize="inherit" />
+						<ExpandMoreIcon fontSize="inherit" />
+						<ExpandMoreIcon fontSize="inherit" />
+					</div>
+				</div>
             <div className="container">
                 <div className="row">
                     <div className="col-12 text-center mx-auto p-5">

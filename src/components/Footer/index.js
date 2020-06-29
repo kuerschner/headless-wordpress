@@ -24,7 +24,7 @@ const Footer = () => {
                         </div>
                         <div className="col-12 text-center text-md-left col-md-3">
                             <Link className="footerLink d-block py-2 py-md-0" to="faq">FAQ</Link>
-                            <a className="footerLink py-2 py-md-0" href="mailto:info@trumanrx.com">info@trumanrx.com</a>
+                            <a className="footerLink py-2 py-md-0" href="/contact">Contact Us</a>
                         </div>
                         <div className="col-12 col-sm-12 col-md-3">
                             <div className="row d-flex justify-content-center py-4 py-md-0">

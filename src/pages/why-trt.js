@@ -47,7 +47,8 @@ const TRT = () => {
                                     <div className="text-center">
                                         <img src={section.image.url} alt={section.image.alt} style={{ maxHeight: "300px" }} />
                                     </div>
-                                    <CenterText heading={section.heading} content={parse(section.text_area)} />
+                                    <h3>{section.heading}</h3>
+                                    <p>{parse(section.text_area)}</p>
                                 </div>
                             ))}
                             {/* <div className="col-12 mx-auto text-center pt-5">
@@ -78,7 +79,10 @@ const TRT = () => {
                     <div className="container py-5">
                         <div className="row pt-4">
                             <div className="col-12 col-lg-6 px-lg-5 d-flex align-items-center">
-                                <CenterText subHeading={data.section_four_heading} />
+                                <div className="topicalAdvantage text-center text-lg-left">
+                                    <h2>{data.section_four_main_heading}</h2>
+                                    <h3>{data.section_four_heading}</h3>
+                                </div>
                             </div>
                             <div className="col-12 col-lg-6">
                                 <div className="row">

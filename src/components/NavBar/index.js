@@ -44,12 +44,12 @@ const NavBar = () => {
               <div className={pathname.includes('about') ? 'selectionLine active' : 'selectionLine'} />
             </NavItem>
             <NavItem>
-              <a href="/contact" className='navItem'>Contact</a>
+              <a href="/members" className='navItem'>Get Started</a>
               <div className={pathname.includes('contact') ? 'selectionLine active' : 'selectionLine'} />
             </NavItem>
             <div className='horizontalBar'></div>
             <NavItem>
-              <a href="/members" className='navItem'>Members</a>
+              <a href="#" className='navItem'>Members</a>
               <div className={pathname.includes('members') ? 'selectionLine active' : 'selectionLine'} />
             </NavItem>
           </Nav>

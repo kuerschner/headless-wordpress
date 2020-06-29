@@ -78,19 +78,23 @@ const About = () => {
                             <CenterText heading={data.section_four_1_heading} />
                         </div>
                         <div className="col-12">
-                            <div className="row d-flex justify-content-center">
+                            <div className="row d-flex justify-content-around">
                                 {data.section_four_1_icons.map((value, key) =>
-                                    <div className="col-12 col-md-6 col-lg-3 text-center mx-5" key={key}>
-                                        <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
+                                    <div className="col-12 col-md-5 col-lg-4 text-center mb-5" key={key}>
+                                        <img src={value.icon.url} alt={value.icon.alt} className="staff-img" />
+                                        <h3>{value.heading}</h3>
+                                        <p>{value.text}</p>
                                     </div>
                                 )}
                             </div>
                         </div>
                         <div className="col-12">
-                            <div className="row d-flex justify-content-around mt-5">
+                            <div className="row d-flex justify-content-around">
                                 {data.section_four_2_icons.map((value, key) =>
-                                    <div className="col-12 col-md-6 col-lg-3 text-center" key={key}>
-                                        <IconText heading={value.heading} content={value.text} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
+                                    <div className="col-12 col-md-5 col-lg-3 text-center mb-5" key={key}>
+                                        <img src={value.icon.url} alt={value.icon.alt} className="staff-img" />
+                                        <h3>{value.heading}</h3>
+                                        <p>{value.text}</p>
                                     </div>
                                 )}
                             </div>

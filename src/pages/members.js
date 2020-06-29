@@ -3,7 +3,7 @@ import axios from "axios";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
 import Dropdown from "../components/Dropdown";
-
+import parse from 'html-react-parser';
 
 const Members = () => {
     const [data, setData] = useState(null);
@@ -53,18 +53,18 @@ const Members = () => {
                         <div className="formContainer">
                             <label style={{fontSize: '1.5rem'}}for="state-select">{data.subheading}</label>
                             <Dropdown options={states} value={state} onChange={setState}/>
-                            <div className='d-flex flex-column'>
-                                <div className='terms1'>
+                            <div>
+                                <div className='terms1 py-4'>
                                     <input type="checkbox" id="terms1" name="terms1" value
                                     ="terms
                                     1" onChange={() => setAgreeTerms1(!agreeTerms1)}/>
                                     {' '}
-                                    <label for="terms1">{data.terms_1} <a href={data.terms_1_link}>{data.terms_1_link_text}</a></label>
+                                    <label for="terms1">{parse(data.terms_1)}</label>
                                 </div>
                                 <div className='terms2'>
                                     <input type="checkbox" id="terms2" name="terms2" value="terms2" onChange={() => setAgreeTerms2(!agreeTerms2)}/>
                                     {' '}
-                                    <label for="terms2">{data.terms_2} <a href={data.terms_2_link}>{data.terms_2_link_text}</a></label>
+                                    <label for="terms2">{parse(data.terms_2)}</label>
                                 </div>
                             </div>
                             <div>
