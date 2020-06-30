@@ -37,7 +37,7 @@ const Contact = () => {
             <div className="container contact-container py-5">
                 <div className="row d-flex justify-content-around">
                     <div className="col-12 col-sm-12 col-md-6 col-lg-7 text-center">
-                        <h2>{text.title.rendered}</h2>
+                        <h1>{text.title.rendered}</h1>
                         <p>{parse(text.content.rendered)}</p>
                         <div className="formContainer">
                             <HubspotForm
@@ -64,6 +64,10 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="row">
+                    <div className="col-12 py-5 text-center">
+                        <h1>Newsroom</h1>
+                        <p>For press inquiries, email <a href="mailto:Jeremy.osheim@trumanrx.com">Jeremy.osheim@trumanrx.com</a></p>
+                    </div>
                     <div className="col-12">
                         { news && 
                             news.map(news => (
