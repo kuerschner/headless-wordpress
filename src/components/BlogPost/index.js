@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./styles.css";
 
-export default ({ heading, content, topics, img, filters }) => {
+export default ({ heading, content, topics, img, filters, blogId }) => {
     const [data, setData] = useState([])
     const [image, setImage] = useState(null)
     const [cats, setCats] = useState([])
@@ -39,7 +40,7 @@ export default ({ heading, content, topics, img, filters }) => {
                 <div className="card blog-card">
                     <div className="card-image p-5 row" style={{ backgroundImage: `url(${image !== null && image.source_url})`, backgroundPosition: "center", backgroundSize: "cover" }}></div>
                     <div className="row">
-                        <div className="col-12 p-5">
+                        <div className="col-12 pt-5 pl-5 pr-5">
                             {
                                 data && 
                                     data.map(cat => 
@@ -49,12 +50,15 @@ export default ({ heading, content, topics, img, filters }) => {
                             {heading && <h2 className="mt-4 mb-1">{heading}</h2>}
                             {content && content}
                         </div>
+                        <div className="col-12 pb-5 text-center">
+                            <Link to={`blog/${blogId}`} className="mt-4 button button-main">Read More</Link>
+                        </div>
                     </div>
                 </div>
             </div>
         :
         null
-        )
-    }
+    )
+}
 
 

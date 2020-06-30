@@ -109,6 +109,7 @@ const Blog = () => {
                                 img={post.featured_media}
                                 key={post.title.rendered}
                                 filters={filters}
+                                blogId={post.id}
                             />
                         ))
                     }

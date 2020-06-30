@@ -12,6 +12,7 @@ import Disclaimer from "./pages/disclaimer";
 import TelehealthConsent from "./pages/telehealth-consent";
 import WhyTrt from "./pages/why-trt";
 import Members from "./pages/members";
+import SingleBlog from "./pages/single-blog";
 import "./css/bootstrap-grid.css";
 import "./css/bootstrap.css";
 import "./App.css";
@@ -71,6 +72,9 @@ function App() {
 					</Route>
 					<Route exact path="/telehealth-consent">
 						<TelehealthConsent activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
+					</Route>
+					<Route exact path="/blog/:blogId">
+						<SingleBlog/>
 					</Route>
 				</Switch>
 			</Router>

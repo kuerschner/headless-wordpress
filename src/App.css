@@ -345,6 +345,17 @@ button.truman-btn-light.selected {
 	margin-right: 2rem;
 }
 
+/* Contact Form */
+.contact-container h3,
+.contact-container p {
+	margin: 0;
+}
+
+/* Single Blog Page */
+.blog-hero {
+	height: 40vh;
+}
+
 /* TRT Page */
 .trt-bg-overlay {
 	background-color: rgba(0, 23, 67, 0.7);

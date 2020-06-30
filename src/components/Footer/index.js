@@ -34,7 +34,6 @@ const Footer = () => {
                                 <div className="col-2 linkedin text-center"><LinkedInIcon/></div>
                                 <div className="col-2 youtube text-center"><YouTubeIcon/></div>
                             </div>
-
                         </div>
                     </div>
                 </div>
