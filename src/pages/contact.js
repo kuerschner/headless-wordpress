@@ -38,7 +38,7 @@ const Contact = () => {
                 <div className="row d-flex justify-content-around">
                     <div className="col-12 col-sm-12 col-md-6 col-lg-7 text-center">
                         <h2>{text.title.rendered}</h2>
-                        <p>{text.content.rendered}</p>
+                        <p>{parse(text.content.rendered)}</p>
                         <div className="formContainer">
                             <HubspotForm
                                 portalId="7044962"
