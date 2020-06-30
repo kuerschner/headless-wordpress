@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../components/Layout";
-import BannerHero from "../components/BannerHero";
 import BlogPost from "../components/BlogPost";
-import image2 from "../images/bgMain.jpg";
 import Fade from "react-reveal/Fade";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import parse from 'html-react-parser';
 
-// TO DO: 
-// 1. Connect Blog Posts
-// 2. Add Blog Filtering?
-// 3. Clean up imports
-
 const Blog = () => {
     const [data, setData] = useState(null)
+    const [blogData, setBlogData] = useState(null)
+    const [catData, setCatData] = useState(null)
     const [title, setTitle] = useState(null)
     const [meta, setMeta] = useState(null)
+    const [filters, setFilters] = useState([])
+    const [all, setAll] = useState(true)
 
     async function makeGetRequest() {
-
-        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/112')
-        .then(res => {
-                const responseData = res.data.acf;
-                const responseTitle = res.data.title;
-                const responseMeta = res.data.meta;
-                setData(responseData);
-                setTitle(responseTitle);
-                setMeta(responseMeta);
+        const callblogPage = await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/112')
+        const callBlogs = await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/posts')
+        const callCats = await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/categories')
+    
+        axios.all([callBlogs, callCats, callblogPage]).then(axios.spread((...responses) => {
+            setBlogData(responses[0].data)
+            setCatData(responses[1].data)
+            setData(responses[2].data.acf);
+			setTitle(responses[2].data.title);
+            setMeta(responses[2].data.meta);
+        })).catch(errors => {
+            console.log(errors)
         })
     }
 
@@ -35,63 +35,32 @@ const Blog = () => {
         makeGetRequest()
     }, [])
 
-    const blogPosts = [
-        {
-            title: "blogPost 1",
-            snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-            topic: "topic 1",
-            img: {
-                src: image2,
-                alt: "test alt"
-            }
-        },
-        {
-            title: "blogPost 2",
-            snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-            topic: "topic 2",
-            img: {
-                src: image2,
-                alt: "test alt"
-            }
-        },
-        {
-            title: "blogPost 3",
-            snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-            topic: "topic 3",
-            img: {
-                src: image2,
-                alt: "test alt"
-            }
-        },
-        {
-            title: "blogPost 4",
-            snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-            topic: "topic 2",
-            img: {
-                src: image2,
-                alt: "test alt"
-            }
-        },
-        {
-            title: "blogPost 5",
-            snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-            topic: "topic 1",
-            img: {
-                src: image2,
-                alt: "test alt"
-            }
-        },
-        {
-            title: "blogPost 6",
-            snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
-            topic: "topic 1",
-            img: {
-                src: image2,
-                alt: "test alt"
-            }
-        },
+    const clickHandler = (cat) => {
+        if(filters.includes(cat)) {
+            const newFilters = [...filters];
+            let ind = newFilters.indexOf(cat);
+            if (ind !== -1) newFilters.splice(ind, 1);
+            setFilters(newFilters)
+        }
+        else {
+            setFilters([cat, ...filters])
+        }
+        setAll(false)
+    }
 
-    ]
+    const resetHandler = () => {
+        console.log("catData", catData);
+        if(catData !== null) {
+            const catNames = catData.map(cat => {
+                return(
+                    cat.name
+                )
+            })
+            setFilters(catNames);
+        }
+        setAll(true)
+    }
+
     return (
         <Layout title={title && title.rendered} meta={meta}>
             {data && 
@@ -116,17 +85,31 @@ const Blog = () => {
 						<ExpandMoreIcon fontSize="inherit" />
 					</div>
 				</div>
-            <div className="container">
+            <div className="container py-5">
                 <div className="row">
-                    <div className="col-12 text-center mx-auto p-5">
-                        <h2>{data.blog_subheading}</h2>
-                        {/* TODO: Add Filtering Here */}
+                    <div className="col-12 text-center">
+                        <h2 className="mb-5">{data.blog_subheading}</h2>
+                    </div>
+                    <div className="col-12 text-center mb-5">
+                        <button onClick={resetHandler} className={`${all ? "button-main" : "button-secondary"} mx-2 button button-main`}>All</button>
+                        {
+                            catData.map(cat => (
+                                <button key={cat.name} onClick={() => clickHandler(cat.name)} className={`${filters.includes(cat.name) ? "button-main" : "button-secondary"} mx-2 button`}>{cat.name}</button>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className="row p-4">
-                    {
-                        blogPosts.map(post => (
-                            <BlogPost heading={post.title} content={post.snippet} topic={post.topic} img={post.img} key={post.title}/>
+                    { blogData.length && 
+                        blogData.map(post => (
+                            <BlogPost 
+                                heading={post.title.rendered}
+                                content={parse(post.excerpt.rendered)}
+                                topics={post._links["wp:term"]}
+                                img={post.featured_media}
+                                key={post.title.rendered}
+                                filters={filters}
+                            />
                         ))
                     }
                 </div>
