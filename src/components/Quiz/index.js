@@ -178,12 +178,12 @@ const Quiz = () => {
                         ?
                             <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
                                 <h1 className="mb-4 font-weight-light">{responseArr[0]}</h1>
-                                <button href="#" className="btn btn-md truman-btn-light text-uppercase">Get Started Now<img className='d-none d-lg-inline-block' src={Arrow} style={arrowStyle} /></button>
+                                <a href="/get-started" className="btn btn-md truman-btn-light text-uppercase">Get Started Now<img className='d-none d-lg-inline-block' src={Arrow} style={arrowStyle} /></a>
                             </div>
                         :
                             <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
                                 <h1 className="mb-4 font-weight-light">{responseArr[1]}</h1>
-                                <button href="#" className="btn btn-md truman-btn-light text-uppercase">Study Up</button>
+                                <a href="/blog" className="btn btn-md truman-btn-light text-uppercase">Study Up</a>
                             </div>
                     }
                 </div>

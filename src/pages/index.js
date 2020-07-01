@@ -39,13 +39,13 @@ const Home = () => {
 				<>
 					<View>
 						<div id="home" className="hero" style={{ backgroundImage: `url(${data.hero_image.url})`, backgroundPosition: "center", backgroundSize: "cover" }}>
-							<div className="container-fluid">
-								<div className="row d-flex align-items-center h-100 min-vh-100">
-									<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 heroTextContainer px-5 d-flex align-items-center">
+							<div className="container-fluid h-100">
+								<div className="row d-flex align-items-center h-100">
+									<div className="heroTextContainer d-flex align-items-sm-center col-12 col-sm-12 col-md-6 col-xl-4 px-3 pt-5 pt-sm-0 px-md-5 h-100">
 										<Fade bottom>
 											<div className="text-center">
-												<img className="heroLogo" src={require("../images/logo.svg")} alt="Truman RX Logo"/>
-												<div className="heading-border mt-4 mb-3 mx-auto"></div>
+												<img className="heroLogo d-none d-md-inline" src={require("../images/logo.svg")} alt="Truman RX Logo"/>
+												<div className="d-none d-md-block heading-border mt-4 mb-3 mx-auto"></div>
 												{data.hero_heading && <h1 className="text-white">{parse(data.hero_heading)}</h1>}
 												<div className="heading-border mt-3 mb-4 mx-auto"></div>
 												{data.hero_text && <p className="text-white">{data.hero_text}</p>}

@@ -34,7 +34,7 @@ const Price = () => {
             {data &&
                 <>
                     <View>
-                        <div className="container py-5">
+                        <div className="container py-sm-5">
                             <div className="row">
                                 <div className="mt-4 col-12 mx-auto mt-2 text-center mb-2">
                                     <h1>{data.section_one_heading}</h1>

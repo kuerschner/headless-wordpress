@@ -35,9 +35,9 @@ const GetChecked = () => {
             <>
             <View>
                 <div className="hero" style={{ backgroundImage: `url(${data.section_one_image.url})`, backgroundPosition: "center", backgroundSize: "cover" }}>
-					<div className="container-fluid">
-						<div className="row d-flex align-items-center h-100 min-vh-100 justify-content-center">
-							<div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 heroTextContainer px-5 d-flex align-items-center">
+					<div className="container-fluid h-100">
+						<div className="row d-flex align-items-center h-100">
+							<div className="heroTextContainer d-flex align-items-sm-center col-12 col-sm-12 col-md-6 col-xl-4 px-3 pt-5 pt-sm-0 px-md-5 h-100">
 								<Fade bottom>
 									<div className="text-center">
 										{data.section_one_heading && <h1 className="text-white">{parse(data.section_one_heading)}</h1>}

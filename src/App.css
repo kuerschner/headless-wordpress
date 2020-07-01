@@ -109,7 +109,7 @@ font-size: 1rem;
 	text-transform: uppercase;
 	font-weight: 700; 
 	font-size: 2rem;
-	bottom: -75px;
+	bottom: 20px;
 } 
 
 .button-main {
@@ -171,7 +171,7 @@ font-size: 1rem;
 
 /* Hero universal styles */
 .hero {
-	height: 100vh;
+	height: 90vh;
 }
 
 .heading-border {
@@ -184,7 +184,6 @@ font-size: 1rem;
 
 .heroTextContainer {
     background-color: rgba(23,43,84, 0.3);
-	height: 100vh;
 }
 
 .heroTextContainer h1 {
@@ -211,55 +210,55 @@ font-size: 1rem;
 	min-height: 100vh;
 }
 
-button.truman-btn {
+.truman-btn {
 	color: #fff;
 	background-color: #001743;
 	border-color: #001743;
 	border-radius: 40px;
 }
 
-button.truman-btn:hover {
+.truman-btn:hover {
 	color: #fff;
 	background-color: #0099d6;
 	border-color: #0099d6;
 }
 
-button.truman-btn.selected {
+.truman-btn.selected {
 	color: #fff;
 	background-color: #0099d6;
 	border-color: #0099d6;
 }
 
-button.truman-btn:disabled,
-button.truman-btn.disabled {
+.truman-btn:disabled,
+.truman-btn.disabled {
 	background-color: gray;
 	border-color: gray;
 }
 
-button.truman-btn img {
+.truman-btn img {
 	opacity: 0;
 	vertical-align: text-bottom;
 	transition: all 0.15s ease-in-out;
 }
 
-button.truman-btn img.img-selected {
+.truman-btn img.img-selected {
 	opacity: 1;
 }
 
-button.truman-btn-light {
+.truman-btn-light {
 	color: #fff;
 	background-color: #0099d6;
 	border-color: #0099d6;
 	border-radius: 40px;
 }
 
-button.truman-btn-light:hover {
+.truman-btn-light:hover {
 	color: #fff;
 	background-color: #00b6ff;
 	border-color: #00b6ff;
 }
 
-button.truman-btn-light.selected {
+.truman-btn-light.selected {
 	color: #fff;
 	background-color: #00b6ff;
 	border-color: #00b6ff;
