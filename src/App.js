@@ -11,7 +11,7 @@ import TermsAndConditions from "./pages/terms-and-conditions";
 import Disclaimer from "./pages/disclaimer";
 import TelehealthConsent from "./pages/telehealth-consent";
 import WhyTrt from "./pages/why-trt";
-import Members from "./pages/members";
+import GetStarted from "./pages/get-started";
 import SingleBlog from "./pages/single-blog";
 import "./css/bootstrap-grid.css";
 import "./css/bootstrap.css";
@@ -55,8 +55,8 @@ function App() {
 					<Route exact path="/contact">
 						<Contact activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
 					</Route>
-					<Route exact path="/members">
-						<Members activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
+					<Route exact path="/get-started">
+						<GetStarted activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />
 					</Route>
 					<Route exact path="/privacy-policy">
 						<PrivacyPolicy activeMenuItem={activeMenuItem} setActiveMenuItem={setActiveMenuItem} />

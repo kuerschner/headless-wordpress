@@ -24,6 +24,7 @@ const Disclaimer = () => {
 
     useEffect(() => {
         makeGetRequest()
+        window.scrollTo(0, 0)
     }, [])
 
     return (

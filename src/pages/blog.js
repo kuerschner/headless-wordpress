@@ -91,10 +91,10 @@ const Blog = () => {
                         <h2 className="mb-5">{data.blog_subheading}</h2>
                     </div>
                     <div className="col-12 text-center mb-5">
-                        <button onClick={resetHandler} className={`${all ? "button-main" : "button-secondary"} mx-2 button button-main`}>All</button>
+                        <button onClick={resetHandler} className={`${all ? "button-main" : "button-secondary"} mx-2 mb-4 button button-main`}>All</button>
                         {
                             catData.map(cat => (
-                                <button key={cat.name} onClick={() => clickHandler(cat.name)} className={`${filters.includes(cat.name) ? "button-main" : "button-secondary"} mx-2 button`}>{cat.name}</button>
+                                <button key={cat.name} onClick={() => clickHandler(cat.name)} className={`${filters.includes(cat.name) ? "button-main" : "button-secondary"} mx-2 mb-4 button`}>{cat.name}</button>
                             ))
                         }
                     </div>

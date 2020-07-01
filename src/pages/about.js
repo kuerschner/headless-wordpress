@@ -4,7 +4,6 @@ import Layout from "../components/Layout";
 import View from "../components/View";
 import VideoText from "../components/VideoText";
 import CenterText from "../components/CenterText";
-import IconText from "../components/IconText";
 
 const About = () => {
 
@@ -36,10 +35,10 @@ const About = () => {
             <View>
                 <div className="container-fluid">
                     <div className="row min-vh-100">
-                        <div className="d-none d-md-block col-md-6 col-lg-6" style={{ backgroundImage: `url(${data.section_one_image.url})`, backgroundSize: "cover" }}></div>
+                        <div className="about-hero-img col-12 col-md-6 col-lg-6" style={{ backgroundImage: `url(${data.section_one_image.url})`, backgroundSize: "cover" }}></div>
                         <div className="col-12 mx-auto col-md-8 col-lg-6 min-vh-100 d-flex align-items-center px-5">
                             <div className="row d-flex justify-content-center">
-                                <div className="col-4 text-center mb-4">
+                                <div className="col-4 text-center my-4">
                                    <img className="img-fluid" src={data.section_one_icon.url} alt={data.section_one_icon.alt} />
                                 </div>
                                 <div className="col-12 text-center">
@@ -55,7 +54,7 @@ const About = () => {
                 </div>
             </View>
             <View>
-                <div className="container py-5 mt-5">
+                <div className="container py-lg-5 mt-lg-5">
                     <VideoText type="textRight" heading={data.section_two_heading} subHeading={data.section_two_subheading} src={data.section_two_video} />
                 </div>
             </View>

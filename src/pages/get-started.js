@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import Dropdown from "../components/Dropdown";
 import parse from 'html-react-parser';
 
-const Members = () => {
+const GetStarted = () => {
     const [data, setData] = useState(null);
     const [title, setTitle] = useState(null);
     const [meta, setMeta] = useState(null);
@@ -53,6 +53,10 @@ const Members = () => {
                         <div className="formContainer">
                             <label style={{fontSize: '1.5rem'}}for="state-select">{data.subheading}</label>
                             <Dropdown options={states} value={state} onChange={setState}/>
+                            { showMessage ?
+                                <div class="alert alert-danger mt-4" role="alert">{data.unavailable_message}</div> 
+                                : null 
+                            }
                             <div>
                                 <div className='terms1 py-4'>
                                     <input type="checkbox" id="terms1" name="terms1" value
@@ -66,13 +70,6 @@ const Members = () => {
                                     {' '}
                                     <label for="terms2">{parse(data.terms_2)}</label>
                                 </div>
-                            </div>
-                            <div>
-                                { showMessage ?
-                                <p>{data.unavailable_message}</p> 
-                                : null 
-                                }
-                                
                                 <Button disabled={state !== 'Colorado' || !agreeTerms1 || !agreeTerms2}>Continue</Button>
                             </div>
                         </div>
@@ -84,4 +81,4 @@ const Members = () => {
     )
 }
 
-export default Members;
+export default GetStarted;

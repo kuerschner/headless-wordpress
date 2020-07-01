@@ -24,6 +24,7 @@ const TermsAndConditions = () => {
 
     useEffect(() => {
         makeGetRequest()
+        window.scrollTo(0, 0)
     }, [])
 
     return (

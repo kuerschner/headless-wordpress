@@ -43,8 +43,8 @@ const NavBar = () => {
               <a href="/about" className='navItem'>About Us</a>
               <div className={pathname.includes('about') ? 'selectionLine active' : 'selectionLine'} />
             </NavItem>
-            <NavItem>
-              <a href="/members" className='navItem'>Get Started</a>
+            <NavItem className="green">
+              <a href="/members" className='navItem navGreen'>Get Started</a>
               <div className={pathname.includes('contact') ? 'selectionLine active' : 'selectionLine'} />
             </NavItem>
             <div className='horizontalBar'></div>

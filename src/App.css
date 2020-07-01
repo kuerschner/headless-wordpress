@@ -415,6 +415,9 @@ button.truman-btn-light.selected {
 	height: 170px;
 }
 
+.about-hero-img {
+	height: 50vh;
+}
 
 .sub-footer {
 	background-color: #0799d6;
@@ -543,7 +546,10 @@ button.truman-btn-light.selected {
 	}
 	.heroTextContainer {
         background-color: rgba(0, 23, 67, 0.7);
-    }
+	}
+	.about-hero-img {
+		height: auto;
+	}
 }
 
 @media screen and (min-width: 900px) {
