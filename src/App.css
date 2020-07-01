@@ -92,7 +92,7 @@ font-size: 1rem;
 }
 
 .app-body {
-	padding-top: 80px;
+	padding-top: 72px;
 }
 
 .formContainer {
@@ -109,6 +109,7 @@ font-size: 1rem;
 	text-transform: uppercase;
 	font-weight: 700; 
 	font-size: 2rem;
+	bottom: -75px;
 } 
 
 .button-main {
@@ -249,7 +250,7 @@ button.truman-btn-light {
 	color: #fff;
 	background-color: #0099d6;
 	border-color: #0099d6;
-	border-radius: .15rem;
+	border-radius: 40px;
 }
 
 button.truman-btn-light:hover {
@@ -362,12 +363,22 @@ button.truman-btn-light.selected {
 	color: #fff;
 }
 
-.terms1 #terms1,
-.terms1 #terms2 {
-	display: block;
-	float: left;
+.moveMobileImage {
+	background-position: -500px;
+}
+
+/* Get Started Terms  */
+.terms1,
+.terms2  {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.terms1 input,
+.terms2 input {
+	margin-top: 0.5rem;
 	margin-right: 10px;
-	margin-top: 6px;	
 }
 
 .carousel-indicators li {
@@ -440,7 +451,6 @@ button.truman-btn-light.selected {
     left: 0;
     right: 0;
     top: auto;
-    bottom: 0;
 	-webkit-animation: shake-vertical 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
 	animation: shake-vertical 5s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
 }
@@ -532,7 +542,7 @@ button.truman-btn-light.selected {
 		font-size: 1.2rem;
 	}
 	.heroTextContainer {
-        background-color: rgba(0, 23, 67, 0.9);
+        background-color: rgba(0, 23, 67, 0.7);
     }
 }
 
@@ -546,6 +556,7 @@ button.truman-btn-light.selected {
 		text-transform: uppercase;
 		font-weight: 700; 
 		font-size: 4rem;
+		bottom: 0;
 	} 
 	.quiz-headline h1 {
 		font-size: 2.6rem;
@@ -557,6 +568,9 @@ button.truman-btn-light.selected {
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) { 
+	.moveMobileImage {
+		background-position: left;
+	}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

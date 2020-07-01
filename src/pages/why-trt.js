@@ -58,7 +58,7 @@ const TRT = () => {
                     </div>
                 </View>
                 <View>
-                    <div className="min-vh-100 container-fluid" style={{ backgroundImage: `url(${data.section_three_background_image.url})`, backgroundSize: "cover" }}>
+                    <div className="min-vh-100 container-fluid moveMobileImage" style={{ backgroundImage: `url(${data.section_three_background_image.url})`, backgroundSize: "cover", backgroundRepeat: 'no-repeat' }}>
                         <div className="min-vh-100 row d-flex justify-content-lg-end">
                             <div className="col-12 col-lg-7 col-xl-6 trt-bg-overlay min-vh-100 d-flex align-items-center py-5">
                                 <div className="row">

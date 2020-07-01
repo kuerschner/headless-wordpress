@@ -16,15 +16,15 @@ export default ({ title, content, img }) => {
 
     useEffect(() => {
         makeGetRequest()
-    }, [])
+    }, [makeGetRequest])
     
 
     return (
         <div className="col-12 mb-5">
             <div className="card blog-card">
                 <div className="row">
-                    <div className="card-image p-5 col-3" style={{ backgroundImage: `url(${image !== null && image})`, backgroundPosition: "center", backgroundSize: "cover" }}></div>
-                    <div className="col-9 p-5">
+                    <div className="card-image p-5 col-12 col-lg-3" style={{ backgroundImage: `url(${image !== null && image})`, backgroundPosition: "center", backgroundSize: "cover" }}></div>
+                    <div className="col-12 col-lg-9 p-5">
                         {title && <h2 className="mt-0 mb-2">{title}</h2>}
                         {content && parse(content)}
                     </div>

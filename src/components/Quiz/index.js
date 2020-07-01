@@ -60,7 +60,7 @@ const Quiz = () => {
     const [answer, setAnswer] = useState(null);
     const [showAnswers, setShowAnswers] = useState(false);
 
-    const responseArr = [`Based on your answers, you may benefit from testosterone replacement therapy through Trūman.`, `Testosterone replacement therapy might not be the type of treatment you need. If you"re interested in learning more about men"s health, study up with our blog.`];
+    const responseArr = [`Based on your answers, you may benefit from testosterone replacement therapy through Trūman.`, `Testosterone replacement therapy might not be the type of treatment you need. If you're interested in learning more about men"s health, study up with our blog.`];
 
     const clickHandler = useCallback((questionKey, selection) => {
         setVisited(!visited);
@@ -116,7 +116,7 @@ const Quiz = () => {
 
     const questions = selections.map((val, key) => {
         return (
-            <div className="quiz-wrapper row d-flex justify-content-center py-4" key={key} id='quiz'>
+            <div className="quiz-wrapper row d-flex justify-content-center py-4" key={key}>
                 <div className="col-12 col-lg-10">
                     <div className="question text-center px-xl-5">
                         <h2>{val.question}</h2>
@@ -169,7 +169,7 @@ const Quiz = () => {
                         {!completeQuiz ? questions : null}
                     </div>
                     <div className="col-12 text-center quiz-complete pt-4 mb-4">
-                        { !completeQuiz && <button onClick={() => setCompleteQuiz(true)} className={`btn btn-md truman-btn ${!complete ? "disabled" : ""}`}>Complete</button> }
+                        { !completeQuiz && <button onClick={() => setCompleteQuiz(true)} className={`btn btn-md truman-btn text-uppercase ${!complete ? "disabled" : ""}`}>Complete</button> }
                     </div>
                 </div>
                 :
@@ -177,13 +177,13 @@ const Quiz = () => {
                     { answer 
                         ?
                             <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
-                                <h1 className="mb-4">{responseArr[0]}</h1>
-                                <button href="#" className="btn btn-md truman-btn-light">Get Started Now<img src={Arrow} style={arrowStyle} /></button>
+                                <h1 className="mb-4 font-weight-light">{responseArr[0]}</h1>
+                                <button href="#" className="btn btn-md truman-btn-light text-uppercase">Get Started Now<img className='d-none d-lg-inline-block' src={Arrow} style={arrowStyle} /></button>
                             </div>
                         :
                             <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
-                                <h1 className="mb-4">{responseArr[1]}</h1>
-                                <button href="#" className="btn btn-md truman-btn-light">Study Up</button>
+                                <h1 className="mb-4 font-weight-light">{responseArr[1]}</h1>
+                                <button href="#" className="btn btn-md truman-btn-light text-uppercase">Study Up</button>
                             </div>
                     }
                 </div>

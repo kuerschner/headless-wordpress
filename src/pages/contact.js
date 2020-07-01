@@ -36,8 +36,8 @@ const Contact = () => {
             <>
             <div className="container contact-container py-5">
                 <div className="row d-flex justify-content-around">
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-7 text-center">
-                        <h1>{text.title.rendered}</h1>
+                    <div className="col-12 col-sm-12 col-lg-7 text-center">
+                        <h1 className="pt-md-5 mt-md-5 pt-lg-0 mt-lg-0">{text.title.rendered}</h1>
                         <p>{parse(text.content.rendered)}</p>
                         <div className="formContainer">
                             <HubspotForm

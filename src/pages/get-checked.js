@@ -69,7 +69,11 @@ const GetChecked = () => {
 					</div>
 				</div>
             </View>
-            <Quiz />
+            <div id='quiz'>
+                <div className='pt-2'>
+                    <Quiz />
+                </div>
+            </div>
             </>
             }
         </Layout>

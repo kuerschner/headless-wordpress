@@ -48,7 +48,7 @@ const Members = () => {
             {data && 
             <div className="container my-md-5">
                 <div className="row my-md-4 py-md-5">
-                    <div className="col-12 col-lg-6 col-xl-7 my-5 mx-auto p-5">
+                    <div className="col-12 col-lg-8 col-xl-7 my-5 mx-auto py-5">
                         <h1>{data.heading}</h1>
                         <div className="formContainer">
                             <label style={{fontSize: '1.5rem'}}for="state-select">{data.subheading}</label>

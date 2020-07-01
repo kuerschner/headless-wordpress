@@ -22,4 +22,9 @@
   font-size: 1.2rem;
   font-family: 'Lato';
 }
-  
+
+@media screen and (min-width: 1200px) { 
+  .disclaimerText {
+    max-width: 60%;
+  }
+}
