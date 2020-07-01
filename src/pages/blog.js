@@ -65,10 +65,10 @@ const Blog = () => {
         <Layout title={title && title.rendered} meta={meta}>
             {data && 
             <>
-                <div className="hero" style={{ backgroundImage: `url(${data.blog_hero_image.url})`, backgroundPosition: "center", backgroundSize: "cover" }}>
+                <div className="hero" style={{ backgroundImage: `url(${data.blog_hero_image.url})`, backgroundPosition: "top", backgroundSize: "cover" }}>
 					<div className="container-fluid h-100">
 						<div className="row d-flex align-items-center h-100 justify-content-end h-100">
-							<div className="heroTextContainer d-flex align-items-sm-center col-12 col-sm-12 col-md-6 col-xl-4 px-3 pt-5 pt-sm-0 px-md-5 h-100">
+							<div className="heroTextContainer d-flex align-items-center col-12 col-sm-12 col-md-6 col-xl-4 px-3 px-md-5 h-100">
 								<Fade bottom>
 									<div className="text-center">
 										{data.blog_hero && <h1 className="text-white">{parse(data.blog_hero)}</h1>}

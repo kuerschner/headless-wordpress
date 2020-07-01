@@ -109,7 +109,7 @@ font-size: 1rem;
 	text-transform: uppercase;
 	font-weight: 700; 
 	font-size: 2rem;
-	bottom: 20px;
+	bottom: 40px;
 } 
 
 .button-main {
@@ -551,18 +551,7 @@ font-size: 1rem;
 	}
 }
 
-@media screen and (min-width: 900px) {
-	.scroll-indicator {
-		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		justify-content: center; 
-		margin-top: -9rem;
-		text-transform: uppercase;
-		font-weight: 700; 
-		font-size: 4rem;
-		bottom: 0;
-	} 
+@media screen and (min-width: 900px) { 
 	.quiz-headline h1 {
 		font-size: 2.6rem;
 	}
@@ -594,6 +583,20 @@ font-size: 1rem;
 	}
 	.quiz-wrapper h2 {
 		font-size: 1.2rem;
+	}
+	.scroll-indicator {
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center; 
+		margin-top: -9rem;
+		text-transform: uppercase;
+		font-weight: 700; 
+		font-size: 4rem;
+		bottom: 75px;
+	}
+	.hero {
+		height: 100vh;
 	}
 }
 

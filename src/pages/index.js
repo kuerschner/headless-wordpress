@@ -41,7 +41,7 @@ const Home = () => {
 						<div id="home" className="hero" style={{ backgroundImage: `url(${data.hero_image.url})`, backgroundPosition: "center", backgroundSize: "cover" }}>
 							<div className="container-fluid h-100">
 								<div className="row d-flex align-items-center h-100">
-									<div className="heroTextContainer d-flex align-items-sm-center col-12 col-sm-12 col-md-6 col-xl-4 px-3 pt-5 pt-sm-0 px-md-5 h-100">
+									<div className="heroTextContainer d-flex align-items-center col-12 col-sm-12 col-md-6 col-xl-4 px-3 px-md-5 h-100">
 										<Fade bottom>
 											<div className="text-center">
 												<img className="heroLogo d-none d-md-inline" src={require("../images/logo.svg")} alt="Truman RX Logo"/>
