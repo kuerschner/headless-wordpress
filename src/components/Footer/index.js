@@ -15,15 +15,15 @@ const Footer = () => {
                 <div className="col-12 col-md-10">
                     <div className="row">
                         <div className="col-12 text-center text-md-left col-md-3">
-                            <Link className="footerLink d-block py-2 py-md-0" to="telehealth-consent">Telehealth Consent</Link>
-                            <Link className="footerLink d-block py-2 py-md-0" to="privacy-policy">Privacy Policy</Link>  
+                            <Link className="footerLink d-block py-2 py-md-0" to="/telehealth-consent">Telehealth Consent</Link>
+                            <Link className="footerLink d-block py-2 py-md-0" to="/privacy-policy">Privacy Policy</Link>  
                         </div>
                         <div className="col-12 text-center text-md-left col-md-3">
-                            <Link className="footerLink d-block py-2 py-md-0" to="terms-and-conditions">Terms and Conditions</Link>
-                            <Link className="footerLink d-block py-2 py-md-0" to="disclaimer">Disclaimer</Link>    
+                            <Link className="footerLink d-block py-2 py-md-0" to="/terms-and-conditions">Terms and Conditions</Link>
+                            <Link className="footerLink d-block py-2 py-md-0" to="/disclaimer">Disclaimer</Link>    
                         </div>
                         <div className="col-12 text-center text-md-left col-md-3">
-                            <Link className="footerLink d-block py-2 py-md-0" to="faq">FAQ</Link>
+                            <Link className="footerLink d-block py-2 py-md-0" to="/faq">FAQ</Link>
                             <a className="footerLink py-2 py-md-0" href="/contact">Contact Us</a>
                         </div>
                         <div className="col-12 col-sm-12 col-md-3">
