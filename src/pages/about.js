@@ -101,7 +101,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="container-fluid mt-5">
-                    <div className="row" style={{ backgroundImage: `url(${data.section_four_2_image.url})`, backgroundSize: "cover", height: "400px", backgroundPosition: "center" }}></div>
+                    <div className="row about-full-image" style={{ backgroundImage: `url(${data.section_four_2_image.url})`, backgroundSize: "cover", height: "600px" }}></div>
                 </div>
             </View>
             <View>

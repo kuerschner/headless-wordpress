@@ -418,6 +418,10 @@ font-size: 1rem;
 	height: 50vh;
 }
 
+.about-full-image {
+	background-position: -150px;
+}
+
 .sub-footer {
 	background-color: #0799d6;
 	color: #fff;
@@ -549,6 +553,11 @@ font-size: 1rem;
 	.about-hero-img {
 		height: auto;
 	}
+
+	.about-full-image {
+		background-position: left -75px;
+	}
+
 }
 
 @media screen and (min-width: 900px) { 

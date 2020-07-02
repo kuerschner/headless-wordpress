@@ -86,13 +86,13 @@ const Home = () => {
 							</div>
 						</div>
 					</View>
-					<View style={{backgroundImage: `url(${data.section_three_background_image.url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+					<View style={{backgroundImage: `url(${data.section_three_background_image.url})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top'}}>
 						<div className="container">
 							<div className="row">
-							<div className="d-none d-lg-block col-12 col-lg-6 text-center">
+								<div className="d-none d-lg-block col-12 col-lg-7 text-center">
 									
-									</div>
-								<div className="col-12 mx-auto col-md-8 col-lg-6 solid-blue-background">
+								</div>
+								<div className="col-12 col-md-8 col-lg-5 solid-blue-background">
 									<LeftText heading={data.section_three_heading} content={data.section_three_description} />
 									{data.section_three_items.map((value, key) =>
 										<IconHeading key={key} heading={value.icon_heading} iconUrl={value.icon.url} iconAlt={value.icon.alt} />
