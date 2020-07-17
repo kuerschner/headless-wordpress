@@ -13,7 +13,7 @@ const Price = () => {
 
     async function makeGetRequest() {
 
-        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/117')
+        await axios.get('http://cms.website.com/wp-json/wp/v2/pages/117')
 
             .then(res => {
                 const responseData = res.data.acf;
@@ -61,7 +61,7 @@ const Price = () => {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <img src={Molecule} alt="Molecule Icon" className="card-molecule"/>
+                                        <img src={Molecule} alt="Molecule Icon" className="card-molecule" />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 mx-auto mt-4">
@@ -82,7 +82,7 @@ const Price = () => {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <img src={Molecule} alt="Molecule Icon" className="card-molecule"/>
+                                        <img src={Molecule} alt="Molecule Icon" className="card-molecule" />
                                     </div>
                                 </div>
                             </div>

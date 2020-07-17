@@ -19,7 +19,7 @@ const NavBar = () => {
   return (
     <div>
       <Navbar expand="md fixed-top">
-        <a href="/" className="logoImgLink img-fluid"><img className="logoImg" src={require("../../images/logo.svg")} alt="Truman RX Logo"/></a>
+        <a href="/" className="logoImgLink img-fluid"><img className="logoImg" src={require("../../images/logo.svg")} alt="Logo"/></a>
         <NavbarToggler onClick={toggle}>{isOpen ? <FaTimes color="#fff" /> : <FaBars color="#fff" />} </NavbarToggler>
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

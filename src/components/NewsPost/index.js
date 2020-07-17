@@ -7,7 +7,7 @@ export default ({ title, content, img }) => {
     const [image, setImage] = useState(null)
 
     async function makeGetRequest() {
-        await axios.get(`http://cms.trumanrx.com/wp-json/wp/v2/media/${img}`)
+        await axios.get(`http://cms.website.com/wp-json/wp/v2/media/${img}`)
 		.then(res => {
             setImage(res.data.source_url)
             console.log(res.data.source_url)

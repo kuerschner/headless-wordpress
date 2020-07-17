@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import parse from 'html-react-parser';
 import Layout from "../components/Layout";
@@ -10,16 +10,16 @@ const TelehealthConsent = () => {
     const [meta, setMeta] = useState(null)
 
     async function makeGetRequest() {
-        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/375')
-		.then(res => {
+        await axios.get('http://cms.website.com/wp-json/wp/v2/pages/375')
+            .then(res => {
                 const responseContent = res.data.content;
                 const responseTitle = res.data.title;
-				const responseMeta = res.data.meta;
-				setContent(responseContent);
-				setTitle(responseTitle);
-				setMeta(responseMeta);
-		})
-	}
+                const responseMeta = res.data.meta;
+                setContent(responseContent);
+                setTitle(responseTitle);
+                setMeta(responseMeta);
+            })
+    }
 
     useEffect(() => {
         makeGetRequest()
@@ -28,7 +28,7 @@ const TelehealthConsent = () => {
 
     return (
         <Layout title={title && title.rendered} meta={meta}>
-            {content && 
+            {content &&
                 <View>
                     <div className="container py-5">
                         <h1 className="mb-4">{title.rendered}</h1>

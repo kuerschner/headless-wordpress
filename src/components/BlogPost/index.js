@@ -11,7 +11,7 @@ export default ({ heading, content, topics, img, filters, blogId }) => {
 
     async function makeGetRequest() {
         const callTopics = await axios.get(`${topics[0].href}`)
-        const callFeaturedImg = await axios.get(`http://cms.trumanrx.com/wp-json/wp/v2/media/${img}`)
+        const callFeaturedImg = await axios.get(`http://cms.website.com/wp-json/wp/v2/media/${img}`)
     
         axios.all([callTopics, callFeaturedImg]).then(axios.spread((...responses) => {
             setData(responses[0].data)
@@ -24,7 +24,7 @@ export default ({ heading, content, topics, img, filters, blogId }) => {
 
     useEffect(() => {
         makeGetRequest()
-    }, [])
+    }, [makeGetRequest])
 
     useEffect(() => {
         if(cats.length) {
@@ -32,7 +32,7 @@ export default ({ heading, content, topics, img, filters, blogId }) => {
             if(!intersection.length) setShow(false)
             else setShow(true)
         }
-    }, [filters])
+    }, [cats, filters])
 
     return (
         show ?

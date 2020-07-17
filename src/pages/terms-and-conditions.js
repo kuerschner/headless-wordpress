@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import parse from 'html-react-parser';
 import Layout from "../components/Layout";
@@ -11,16 +11,16 @@ const TermsAndConditions = () => {
 
     async function makeGetRequest() {
 
-        await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/371')
-		.then(res => {
+        await axios.get('http://cms.website.com/wp-json/wp/v2/pages/371')
+            .then(res => {
                 const responseTitle = res.data.title;
                 const responseContent = res.data.content;
-				const responseMeta = res.data.meta;
-				setContent(responseContent);
-				setTitle(responseTitle);
-				setMeta(responseMeta);
-		})
-	}
+                const responseMeta = res.data.meta;
+                setContent(responseContent);
+                setTitle(responseTitle);
+                setMeta(responseMeta);
+            })
+    }
 
     useEffect(() => {
         makeGetRequest()

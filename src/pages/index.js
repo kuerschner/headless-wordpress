@@ -17,7 +17,7 @@ const Home = () => {
 
 	async function makeGetRequest() {
 
-	await axios.get('http://cms.trumanrx.com/wp-json/wp/v2/pages/9')
+	await axios.get('http://cms.website.com/wp-json/wp/v2/pages/9')
 		.then(res => {
 				const responseData = res.data.acf;
 				const responseTitle = res.data.title;
@@ -44,7 +44,7 @@ const Home = () => {
 									<div className="heroTextContainer d-flex align-items-center col-12 col-sm-12 col-md-6 col-xl-4 px-3 px-md-5 h-100">
 										<Fade bottom>
 											<div className="text-center">
-												<img className="heroLogo d-none d-md-inline" src={require("../images/logo.svg")} alt="Truman RX Logo"/>
+												<img className="heroLogo d-none d-md-inline" src={require("../images/logo.svg")} alt="Logo"/>
 												<div className="d-none d-md-block heading-border mt-4 mb-3 mx-auto"></div>
 												{data.hero_heading && <h1 className="text-white">{parse(data.hero_heading)}</h1>}
 												<div className="heading-border mt-3 mb-4 mx-auto"></div>

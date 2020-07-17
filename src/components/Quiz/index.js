@@ -125,7 +125,7 @@ const Quiz = () => {
                         <div className="col-12 col-sm-7 col-md-5 col-lg-3 col-xl-3 px-xl-4 mt-3">
                             <button
                                 onClick={() => clickHandler(key, true)}
-                                className={`btn btn-md btn-block truman-btn ${val.answer !== null ? val.answer ? "selected" : null : ""}`}
+                                className={`btn btn-md btn-block main-btn ${val.answer !== null ? val.answer ? "selected" : null : ""}`}
                             >
                                 <img src={CheckBox} style={checkStyle} className={`${val.answer !== null ? val.answer ? "img-selected" : null : ""}`} />Yes
                             </button>
@@ -133,7 +133,7 @@ const Quiz = () => {
                         <div className="col-12 col-sm-7 col-md-5 col-lg-3 col-xl-3 px-xl-4 mt-3">
                             <button
                                 onClick={() => clickHandler(key, false)}
-                                className={`btn btn-md btn-block truman-btn ${val.answer !== null ? !val.answer ? "selected" : null : ""}`}
+                                className={`btn btn-md btn-block main-btn ${val.answer !== null ? !val.answer ? "selected" : null : ""}`}
                             >
                                 <img src={CheckBox} style={checkStyle} className={`${val.answer !== null ? !val.answer ? "img-selected" : null : ""}`} />No
                             </button>
@@ -169,7 +169,7 @@ const Quiz = () => {
                         {!completeQuiz ? questions : null}
                     </div>
                     <div className="col-12 text-center quiz-complete pt-4 mb-4">
-                        { !completeQuiz && <button onClick={() => setCompleteQuiz(true)} className={`btn btn-md truman-btn text-uppercase ${!complete ? "disabled" : ""}`}>Complete</button> }
+                        { !completeQuiz && <button onClick={() => setCompleteQuiz(true)} className={`btn btn-md main-btn text-uppercase ${!complete ? "disabled" : ""}`}>Complete</button> }
                     </div>
                 </div>
                 :
@@ -178,12 +178,12 @@ const Quiz = () => {
                         ?
                             <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
                                 <h1 className="mb-4 font-weight-light">{responseArr[0]}</h1>
-                                <a href="/get-started" className="btn btn-md truman-btn-light text-uppercase">Get Started Now<img className='d-none d-lg-inline-block' src={Arrow} style={arrowStyle} /></a>
+                                <a href="/get-started" className="btn btn-md main-btn-light text-uppercase">Get Started Now<img className='d-none d-lg-inline-block' src={Arrow} style={arrowStyle} /></a>
                             </div>
                         :
                             <div className="col-12 col-sm-10 col-lg-8 col-xl-7 text-center quiz-headline pt-4 mb-4">
                                 <h1 className="mb-4 font-weight-light">{responseArr[1]}</h1>
-                                <a href="/blog" className="btn btn-md truman-btn-light text-uppercase">Study Up</a>
+                                <a href="/blog" className="btn btn-md main-btn-light text-uppercase">Study Up</a>
                             </div>
                     }
                 </div>
