@@ -6,11 +6,11 @@ import Footer from './Footer';
 
 
 
-export default function Layout(props) {
+export default function Layout({title, children}) {
     return (
         <>
             <Helmet>
-                <title>{`Trūman - ${props.title}`}</title>
+                <title>{title}</title>
                 <link rel="icon" href="/favicon.ico" />
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@200;400;500;700;900&family=Open+Sans&display=swap" rel="stylesheet" />
                 <meta charSet="utf-8" />
@@ -19,7 +19,7 @@ export default function Layout(props) {
 
             <main>
                 <NavBar />
-                <div className="app-body">{props.children}</div>
+                <div className="app-body">{children}</div>
             </main>
 
             <footer>
